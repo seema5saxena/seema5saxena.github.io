@@ -3,58 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Yoga Classes</title>
+    <title>Dr. Seema Saxena - Yoga Classes</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">Seema Yoga</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Dr. Seema Saxena</div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="seema.jpg" alt="Seema Saxena" class="hero-image">
-        <div class="hero-text">
-            <h1>Welcome to Seema's Yoga Classes</h1>
-            <p>Dr. Seema Saxena - Ayurvedic Doctor & Yoga Teacher with 25+ years of experience.</p>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Students Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <p>"Seema's classes have transformed my life. Her expertise in Ayurveda and yoga is unparalleled."</p>
-                <span>- Aarti R.</span>
-            </div>
-            <div class="testimonial">
-                <p>"I feel more relaxed and healthier since joining these classes. Highly recommend!"</p>
-                <span>- Ramesh K.</span>
-            </div>
-            <div class="testimonial">
-                <p>"A perfect mix of mindfulness and physical well-being. Seema is amazing!"</p>
-                <span>- Priya S.</span>
-            </div>
-            <div class="testimonial">
-                <p>"Beginner-friendly and so informative. Seema's guidance is truly inspiring."</p>
-                <span>- Neha M.</span>
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="intro-content">
+            <img src="seema.jpg" alt="Dr. Seema Saxena" class="intro-img">
+            <div class="intro-text">
+                <h1>Dr. Seema Saxena</h1>
+                <p>Ayurvedic Doctor & Yoga Teacher with 25+ years of experience. Beginner-friendly yoga classes designed to ensure a holistic approach to your well-being by combining Ayurvedic principles with yoga techniques.</p>
             </div>
         </div>
     </section>
 
-    <!-- Class Information Section -->
-    <section class="class-info">
-        <h2>Beginner-Friendly Yoga Classes</h2>
-        <p>Our classes are designed for everyone, including beginners. Dr. Seema combines Ayurvedic principles with yoga techniques to ensure a holistic approach to your well-being.</p>
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <h2>Achievements</h2>
+        <div class="carousel">
+            <div><img src="achievement1.jpg" alt="Achievement 1"></div>
+            <div><img src="achievement2.jpg" alt="Achievement 2"></div>
+            <div><img src="achievement3.jpg" alt="Achievement 3"></div>
+            <div><img src="achievement4.jpg" alt="Achievement 4"></div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: <a href="tel:+1234567890">+1 234-567-890</a></p>
-        <p>Email: <a href="mailto:info@seemayoga.com">info@seemayoga.com</a></p>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Benefits of Yoga</h2>
+        <div class="benefit-list">
+            <div class="benefit-item">Improve flexibility and strength</div>
+            <div class="benefit-item">Reduce stress and promote relaxation</div>
+            <div class="benefit-item">Enhance overall well-being</div>
+        </div>
     </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <p>Our yoga classes are beginner-friendly and follow a step-by-step approach:</p>
+        <ul>
+            <li>Step 1: Choose a suitable class time.</li>
+            <li>Step 2: Join our guided sessions.</li>
+            <li>Step 3: Experience the benefits of holistic yoga.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Information -->
+    <footer class="contact">
+        <h2>Contact Information</h2>
+        <p>1. Email: seema.saxena@yoga.com</p>
+        <p>2. Phone: +91-9876543210</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').slick({
+                autoplay: true,
+                dots: true,
+                arrows: false,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
 </body>
 </html>
+
