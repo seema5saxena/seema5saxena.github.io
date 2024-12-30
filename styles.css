@@ -1,126 +1,220 @@
-/* General Reset */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Seema Saxena - Yoga Classes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
 
-header {
-    background-color: #fff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-}
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #eef2f5;
+        }
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
-    background: #eef7f2;
-}
+        .intro-img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.hero-image {
-    max-width: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
+        .intro-text {
+            max-width: 600px;
+            text-align: left;
+        }
 
-.hero-text h1 {
-    font-size: 36px;
-    color: #2c3e50;
-    margin: 0 0 10px;
-}
+        .intro-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-.hero-text p {
-    font-size: 18px;
-    color: #555;
-}
+        .intro-text p {
+            font-size: 1.2em;
+        }
 
-.testimonials {
-    padding: 40px 20px;
-    text-align: center;
-}
+        .achievements {
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-.testimonials h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
+        .achievements h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        .carousel img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.testimonial {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .benefits {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-.testimonial p {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 10px;
-}
+        .benefits h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-.testimonial span {
-    font-weight: bold;
-    color: #2c3e50;
-}
+        .benefit-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
-.class-info {
-    background-color: #eef7f2;
-    padding: 40px 20px;
-    text-align: center;
-}
+        .benefit-item {
+            background-color: #eef2f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.class-info h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
+        .how-it-works {
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-.class-info p {
-    font-size: 18px;
-    color: #555;
-    margin: 0 auto;
-    max-width: 600px;
-}
+        .how-it-works h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-.contact {
-    padding: 40px 20px;
-    text-align: center;
-}
+        .how-it-works ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.contact h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
+        .how-it-works li {
+            background-color: #eef2f5;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.contact p {
-    font-size: 18px;
-    color: #555;
-}
+        .contact {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
 
-.contact a {
-    color: #2c3e50;
-    text-decoration: none;
-}
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
 
-.contact a:hover {
-    text-decoration: underline;
-}
+        .contact p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Dr. Seema Saxena</div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="intro-content">
+            <img src="seema.jpg" alt="Dr. Seema Saxena" class="intro-img">
+            <div class="intro-text">
+                <h1>Dr. Seema Saxena</h1>
+                <p>Ayurvedic Doctor & Yoga Teacher with 25+ years of experience. Beginner-friendly yoga classes designed to ensure a holistic approach to your well-being by combining Ayurvedic principles with yoga techniques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <h2>Achievements</h2>
+        <div class="carousel">
+            <div><img src="achievement1.jpg" alt="Achievement 1"></div>
+            <div><img src="achievement2.jpg" alt="Achievement 2"></div>
+            <div><img src="achievement3.jpg" alt="Achievement 3"></div>
+            <div><img src="achievement4.jpg" alt="Achievement 4"></div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Benefits of Yoga</h2>
+        <div class="benefit-list">
+            <div class="benefit-item">Improve flexibility and strength</div>
+            <div class="benefit-item">Reduce stress and promote relaxation</div>
+            <div class="benefit-item">Enhance overall well-being</div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <p>Our yoga classes are beginner-friendly and follow a step-by-step approach:</p>
+        <ul>
+            <li>Step 1: Choose a suitable class time.</li>
+            <li>Step 2: Join our guided sessions.</li>
+            <li>Step 3: Experience the benefits of holistic yoga.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Information -->
+    <footer class="contact">
+        <h2>Contact Information</h2>
+        <p>1. Email: seema.saxena@yoga.com</p>
+        <p>2. Phone: +91-9876543210</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carousel').slick({
+                autoplay: true,
+                dots: true,
+                arrows: false,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+</body>
+</html>
