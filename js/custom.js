@@ -60,7 +60,7 @@
           event.preventDefault();
           $('html, body').animate({
             scrollTop: target.offset().top - 74
-          }, 300);
+          }, 200);
         }
       }
     });
