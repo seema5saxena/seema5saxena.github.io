@@ -235,16 +235,13 @@ strong {
     opacity: 1;
     transform: translateY(0px);
   }
-  25% {
+  35% {
     opacity: 1;
     transform: translateY(0px);
   }
-  30% {
+  40% {
     opacity: 0;
     transform: translateY(5px);
-  }
-  80% {
-    opacity: 0;
   }
   100% {
     opacity: 0;
