@@ -380,23 +380,26 @@ strong {
 }
 
 .navbar-brand {
-  color: var(--primary-color);
-  font-family: var(--title-font-family);
-  font-size: var(--h5-font-size);
-  font-weight: var(--font-weight-bold);
+  color: var(--primary-color) !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  letter-spacing: 0.5px;
+  font-weight: 700 !important;
   margin: 0 30px;
   padding: 0;
   text-align: center;
 }
 
 .navbar-brand strong {
-  color: var(--p-color);
-  font-family: var(--body-font-family);
-  font-size: 11px;
-  letter-spacing: 1px;
+  color: var(--p-color) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 2px;
   text-transform: uppercase;
   position: relative;
   bottom: 2px;
+  font-weight: 500 !important;
+  margin-top: 2px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -406,11 +409,15 @@ strong {
 
 .navbar-nav .nav-link {
   color: var(--p-color);
-  font-weight: var(--font-weight-semibold);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
   font-size: var(--menu-font-size);
   padding-top: 15px;
   padding-bottom: 15px;
   position: relative;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link::after {
@@ -422,7 +429,8 @@ strong {
   height: 2px;
   background-color: var(--primary-color);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 2px;
 }
 
 .navbar-nav .nav-item.active .nav-link::after,
@@ -433,7 +441,7 @@ strong {
 .navbar-nav .nav-item.active .nav-link, 
 .nav-link:focus, 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .nav-link:focus {
@@ -881,12 +889,43 @@ strong {
   FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background: #fafbfa;
-  border-top: 1px solid var(--border-color);
+  background: #f4f7f6 !important; /* Soft light sage-cream tint */
+  border-top: 1px solid rgba(42, 111, 93, 0.1);
+  color: var(--p-color);
+}
+
+.site-footer h5 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark-color);
+}
+
+.footer-timing-card {
+  transition: transform 0.3s ease;
+}
+
+.footer-timing-card:hover {
+  transform: translateY(-2px);
+}
+
+.footer-contact-link {
+  color: var(--p-color);
+  transition: all 0.3s ease;
+}
+
+.footer-contact-link:hover {
+  color: var(--primary-color) !important;
+  transform: translateX(4px);
+}
+
+.footer-contact-link:hover .icon-wrap {
+  border-color: var(--primary-color) !important;
+  background-color: var(--primary-light) !important;
 }
 
 .copyright-text {
-  font-size: var(--menu-font-size);
+  font-size: 13px;
 }
 
 /*---------------------------------------
