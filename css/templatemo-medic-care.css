@@ -11,33 +11,35 @@ https://templatemo.com/tm-566-medic-care
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #0066cc; /* Action Blue */
-  --primary-active:               #0055b3; /* Action Blue active press */
-  --primary-light:                #e8f3ff; /* Soft Blue tint */
-  --section-bg-color:             #f5f5f7; /* Canvas Parchment */
-  --dark-color:                   #1d1d1f; /* Near-Black Ink */
-  --title-color:                  #1d1d1f; /* Near-Black Ink */
-  --p-color:                      #1d1d1f; /* Near-Black Ink / Body text */
-  --muted-color:                  #86868b; /* Apple System Muted Grey */
-  --border-color:                 #e5e5e7; /* Hairline */
-  --border-soft:                  #f5f5f7;
+  --primary-color:                #181d26; /* Airtable Ink/Near-Black */
+  --primary-active:               #0d1218; /* Near-Black active */
+  --primary-light:                #f8fafc; /* Surface Soft */
+  --section-bg-color:             #ffffff; /* Canvas */
+  --dark-color:                   #181d26; /* Ink */
+  --title-color:                  #181d26; /* Ink */
+  --p-color:                      #333840; /* Body text */
+  --muted-color:                  #41454d; /* Muted */
+  --border-color:                 #dddddd; /* Hairline divider */
+  --border-soft:                  #e0e2e6; /* Surface Strong / Soft border */
+  --signature-cream:              #f5e9d4; /* Airtable Cream Callout */
+  --signature-forest:             #0a2e0e; /* Airtable Forest Green */
 
-  --body-font-family:             system-ui, -apple-system, 'Inter', sans-serif;
-  --title-font-family:            system-ui, -apple-system, 'Inter', sans-serif;
+  --body-font-family:             system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --title-font-family:            system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 
-  --h1-font-size:                 48px; /* SF Pro Display proportions */
-  --h2-font-size:                 32px;
-  --h3-font-size:                 24px;
-  --h4-font-size:                 20px;
-  --h5-font-size:                 18px;
-  --h6-font-size:                 16px;
-  --p-font-size:                  17px; /* 17px body copy per Apple specs */
+  --h1-font-size:                 40px; /* display-lg */
+  --h2-font-size:                 32px; /* display-md */
+  --h3-font-size:                 24px; /* title-lg */
+  --h4-font-size:                 20px; /* title-md */
+  --h5-font-size:                 18px; /* title-sm */
+  --h6-font-size:                 16px; /* label-md */
+  --p-font-size:                  15px; /* body-md size nudge */
   --menu-font-size:               14px;
 
   --font-weight-light:            300;
   --font-weight-normal:           400;
-  --font-weight-semibold:         600; /* SF Pro Display headings */
-  --font-weight-bold:             700;
+  --font-weight-semibold:         500; /* display weight 500 */
+  --font-weight-bold:             600;
 }
 
 body {
@@ -63,20 +65,19 @@ h6 {
   color: var(--dark-color);
   font-family: var(--title-font-family);
   font-weight: var(--font-weight-semibold);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  line-height: 1.2;
+  letter-spacing: 0; /* no negative letter spacing on Haas Grotesk */
 }
 
 h1 {
   font-size: var(--h1-font-size);
-  line-height: 1.07;
-  letter-spacing: -0.025em; /* Signature Apple tight display */
+  font-weight: var(--font-weight-normal); /* Haas Grotesk h1 display 400 */
+  line-height: 1.2;
 }
 
 h2 {
   font-size: var(--h2-font-size);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-normal); /* display h2 400 */
 }
 
 h3 {
@@ -131,17 +132,17 @@ a:hover {
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
   color: var(--white-color) !important;
-  font-weight: var(--font-weight-normal);
-  line-height: 40px;
-  height: 40px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 48px;
+  height: 48px;
   position: relative;
-  padding: 0 20px;
+  padding: 0 24px;
   box-sizing: border-box;
   margin: 0;
-  border-radius: 9999px; /* Pill shape */
+  border-radius: 12px; /* rounded.lg = 12px */
   text-align: center;
-  font-size: 14px;
-  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  font-size: 16px; /* button font-size = 16px */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
 }
 
@@ -149,7 +150,7 @@ a:hover {
   background-color: var(--primary-active);
   border-color: var(--primary-active);
   box-shadow: none;
-  transform: scale(0.97); /* Apple micro-interaction transform */
+  transform: none;
 }
 
 .custom-link::before {
@@ -248,7 +249,7 @@ strong {
 .hero {  
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background: var(--white-color);
+  background: var(--white-color); /* pure white canvas, no gradients */
 }
 
 .hero .container {
@@ -260,22 +261,16 @@ strong {
 
 .hero-image-wrap {
   position: relative;
-  border-radius: 0;
+  border-radius: 12px; /* rounded.lg = 12px */
   box-shadow: none;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.hero-image-wrap:hover {
-  transform: scale(1.02);
 }
 
 .hero-split-image {
   width: 100%;
   height: 460px;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 12px;
   display: block;
-  box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0; /* Apple product shadow */
 }
 
 .bg-primary-light {
@@ -284,7 +279,7 @@ strong {
 }
 
 .contact-phone {
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-semibold);
   color: var(--primary-color);
 }
 
@@ -330,45 +325,42 @@ strong {
   NAVIGATION              
 -----------------------------------------*/
 .navbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: rgba(245, 245, 247, 0.8) !important; /* Frosted parchment */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--white-color) !important;
   border-bottom: 1px solid var(--border-color);
   box-shadow: none !important;
   transition: all 0.3s ease;
 }
 
 .navbar-brand {
-  color: var(--dark-color) !important;
+  color: var(--primary-color) !important;
   font-family: var(--title-font-family);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: var(--font-weight-semibold);
   margin: 0 30px;
   padding: 0;
   text-align: center;
-  letter-spacing: -0.5px;
 }
 
 .navbar-brand strong {
   color: var(--muted-color);
   font-family: var(--body-font-family);
-  font-size: 10px;
-  letter-spacing: 0px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   position: relative;
   bottom: 0px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding-right: 1.2rem;
-  padding-left: 1.2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 .navbar-nav .nav-link {
   color: var(--dark-color) !important;
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--menu-font-size);
   padding-top: 10px;
   padding-bottom: 10px;
@@ -378,7 +370,7 @@ strong {
 }
 
 .navbar-nav .nav-link::after {
-  display: none; /* No underlines on Apple sub-nav links */
+  display: none; /* no underline bars on Airtable nav */
 }
 
 .navbar-nav .nav-item.active .nav-link, 
@@ -464,7 +456,7 @@ strong {
 .gallery-item-wrap {
   position: relative;
   overflow: hidden;
-  border-radius: 18px; /* rounded.lg */
+  border-radius: 10px; /* rounded.md = 10px */
   box-shadow: none;
   border: 1px solid var(--border-color);
   height: 380px;
@@ -472,7 +464,7 @@ strong {
 }
 
 .gallery-item-wrap .galleryImage {
-  border-radius: 18px;
+  border-radius: 10px;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   object-fit: cover;
   height: 100%;
@@ -491,7 +483,7 @@ strong {
   display: flex;
   align-items: flex-end;
   padding: 30px;
-  border-radius: 18px;
+  border-radius: 10px;
   box-sizing: border-box;
 }
 
@@ -533,24 +525,23 @@ strong {
   STEP CARDS               
 -----------------------------------------*/
 .step-card {
-  border-radius: 18px;
+  border-radius: 12px; /* rounded.lg = 12px */
   border: 1px solid var(--border-color);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: border-color 0.2s ease;
   position: relative;
   overflow: hidden;
   background: var(--white-color);
-  box-shadow: none !important;
+  box-shadow: none !important; /* flat card elevation */
 }
 
 .step-card:hover {
-  transform: scale(1.02);
-  border-color: var(--border-color);
+  border-color: var(--primary-color);
 }
 
 .step-number {
   font-family: var(--title-font-family);
   font-size: 3rem;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--primary-color);
   opacity: 0.15;
   display: block;
@@ -564,85 +555,32 @@ strong {
 
 .highlighted-step {
   border-color: var(--border-color);
-  background: var(--section-bg-color) !important; /* Parchment */
+  background: var(--primary-light) !important; /* Soft Blue / Surface Soft */
 }
 
-/*---------------------------------------
-  PRICING PACKAGES               
------------------------------------------*/
-/* Alternating Rhythm Sections styling */
+/* Alternating Rhythm Sections */
 #about {
-    background-color: var(--section-bg-color); /* Parchment */
+    background-color: var(--signature-cream); /* Cream Signature background */
     border-bottom: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
 }
 
 #timeline {
-    background-color: var(--white-color); /* Pure White */
-}
-
-#packages {
-    background-color: #1d1d1f !important; /* Surface Tile 1 (Dark) */
-    color: var(--white-color) !important;
-    border-top: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-}
-
-#packages h2,
-#packages h3,
-#packages h4,
-#packages p,
-#packages li,
-#packages .price-val,
-#packages .currency {
-    color: var(--white-color) !important;
-}
-
-#packages .package-desc {
-    color: #a1a1a6 !important; /* Apple muted text on dark */
-}
-
-#packages .package-price .duration {
-    color: #a1a1a6 !important;
-}
-
-#packages .package-card {
-    background-color: #272729 !important; /* Surface Tile 2 */
-    border: 1px solid #3a3a3c !important;
-    border-radius: 18px;
-    box-shadow: none !important;
-}
-
-#packages .package-card.highlighted-package {
-    border-color: var(--primary-color) !important;
-    background-color: #2a2a2c !important; /* Surface Tile 3 */
-}
-
-#packages .popular-badge {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    font-size: 11px;
-    font-weight: var(--font-weight-normal);
-}
-
-#packages .custom-link {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--white-color) !important;
+    background-color: var(--white-color); /* White Canvas */
 }
 
 #gallery {
-    background-color: var(--section-bg-color); /* Parchment */
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--white-color); /* White Canvas */
 }
 
 #reviews {
-    background-color: var(--white-color); /* Pure White */
+    background-color: var(--primary-light); /* Soft-Blue / Surface Soft */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 #booking {
-    background-color: var(--section-bg-color); /* Parchment */
-    border-top: 1px solid var(--border-color);
+    background-color: var(--white-color); /* White Canvas */
 }
 
 .package-card {
@@ -727,17 +665,17 @@ strong {
   padding: 32px;
   background: var(--white-color);
   border: 1px solid var(--border-color);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 18px !important; /* rounded.lg */
+  transition: border-color 0.2s ease;
+  border-radius: 10px !important; /* rounded.md = 10px */
   box-shadow: none !important;
 }
 
 .reviews-thumb:hover {
-  transform: scale(1.02);
+  border-color: var(--border-color);
 }
 
 .reviews-stars i {
-  color: var(--primary-color); /* Action Blue stars per Apple specs */
+  color: var(--primary-color); /* Ink rating stars per Airtable specs */
   margin-right: 2px;
   font-size: 13px;
 }
@@ -754,9 +692,8 @@ strong {
   margin-top: 10px;
   margin-bottom: 25px;
   color: var(--p-color);
-  line-height: 1.47;
+  line-height: 1.4;
   font-size: var(--p-font-size);
-  letter-spacing: -0.01em;
 }
 
 .reviews-image {
@@ -791,7 +728,7 @@ strong {
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb:hover {
-  transform: scale(1.02);
+  border-color: var(--primary-color);
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-text,
@@ -866,10 +803,10 @@ strong {
   BOOKING & INQUIRY               
 -----------------------------------------*/
 .booking-form {
-  border-radius: 18px !important; /* rounded.lg */
+  border-radius: 12px !important; /* rounded.lg = 12px */
   border: 1px solid var(--border-color);
   box-shadow: none !important;
-  background: var(--white-color);
+  background: var(--signature-cream); /* Cream callout background */
   padding: 40px !important;
 }
 
@@ -877,20 +814,20 @@ strong {
 .booking-form .form-select {
   background: var(--white-color);
   border: 1px solid var(--border-color);
-  border-radius: 8px; /* rounded.sm */
+  border-radius: 6px; /* rounded.sm = 6px */
   color: var(--dark-color);
   font-weight: var(--font-weight-normal);
   padding: 12px 16px;
   transition: all 0.2s ease;
   margin-top: 0;
-  font-size: 15px;
+  font-size: 14px; /* body-md = 14px */
 }
 
 .booking-form .form-control:focus,
 .booking-form .form-select:focus {
   background: var(--white-color);
   border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 4px var(--primary-light);
+  box-shadow: 0 0 0 2px #458fff; /* Info border */
   color: var(--dark-color);
   outline: none;
 }
@@ -898,23 +835,22 @@ strong {
 .booking-form #submit-button {
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-semibold);
   color: var(--white-color);
-  text-transform: none; /* Apple doesn't use all-caps on CTA buttons */
+  text-transform: none; /* No all-caps on Airtable buttons */
   letter-spacing: 0px;
-  border-radius: 9999px; /* Pill */
-  height: 44px;
+  border-radius: 12px; /* rounded.lg = 12px */
+  height: 48px;
   padding: 0;
-  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .booking-form #submit-button:hover {
   background-color: var(--primary-active);
   border-color: var(--primary-active);
   box-shadow: none;
-  transform: scale(0.97);
 }
 
 /*---------------------------------------
