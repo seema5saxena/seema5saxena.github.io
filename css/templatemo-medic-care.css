@@ -881,7 +881,8 @@ strong {
   FOOTER              
 -----------------------------------------*/
 .site-footer {
-  background: var(--section-bg-color);
+  background: #fafbfa;
+  border-top: 1px solid var(--border-color);
 }
 
 .copyright-text {
