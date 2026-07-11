@@ -10,36 +10,32 @@ https://templatemo.com/tm-566-medic-care
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
-  --primary-color:                #181d26; /* Airtable Ink/Near-Black */
-  --primary-active:               #0d1218; /* Near-Black active */
-  --primary-light:                #f8fafc; /* Surface Soft */
-  --section-bg-color:             #ffffff; /* Canvas */
-  --dark-color:                   #181d26; /* Ink */
-  --title-color:                  #181d26; /* Ink */
-  --p-color:                      #333840; /* Body text */
-  --muted-color:                  #41454d; /* Muted */
-  --border-color:                 #dddddd; /* Hairline divider */
-  --border-soft:                  #e0e2e6; /* Surface Strong / Soft border */
-  --signature-cream:              #f5e9d4; /* Airtable Cream Callout */
-  --signature-forest:             #0a2e0e; /* Airtable Forest Green */
+  --white-color:                  #FFFFFF;
+  --primary-color:                #2a6f5d; /* Calm Ayurvedic Sage Green/Teal */
+  --primary-light:                #e8f3f1; /* Soft green tint */
+  --primary-hover:                #1b4c3f; /* Deeper Green on Hover */
+  --section-bg-color:             #f7f9f8; /* Soft green-grey background */
+  --dark-color:                   #1f2d29; /* Soft charcoal-green instead of harsh black */
+  --title-color:                  #2b3f3a; 
+  --p-color:                      #4f635e; /* Elegant grey-green body text */
+  --border-color:                 #e0e7e4;
 
-  --body-font-family:             system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --title-font-family:            system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --body-font-family:             'Plus Jakarta Sans', sans-serif;
+  --title-font-family:            'Playfair Display', serif;
 
-  --h1-font-size:                 40px; /* display-lg */
-  --h2-font-size:                 32px; /* display-md */
-  --h3-font-size:                 24px; /* title-lg */
-  --h4-font-size:                 20px; /* title-md */
-  --h5-font-size:                 18px; /* title-sm */
-  --h6-font-size:                 16px; /* label-md */
-  --p-font-size:                  15px; /* body-md size nudge */
-  --menu-font-size:               14px;
+  --h1-font-size:                 52px;
+  --h2-font-size:                 40px;
+  --h3-font-size:                 32px;
+  --h4-font-size:                 28px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 20px;
+  --p-font-size:                  17px;
+  --menu-font-size:               16px;
 
   --font-weight-light:            300;
   --font-weight-normal:           400;
-  --font-weight-semibold:         500; /* display weight 500 */
-  --font-weight-bold:             600;
+  --font-weight-semibold:         600;
+  --font-weight-bold:             700;
 }
 
 body {
@@ -47,16 +43,12 @@ body {
     font-family: var(--body-font-family);    
     position: relative;
     padding-top: 94px;
-    color: var(--p-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
 
-h1,
 h2,
 h3,
 h4,
@@ -64,20 +56,31 @@ h5,
 h6 {
   color: var(--dark-color);
   font-family: var(--title-font-family);
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
-  letter-spacing: 0; /* no negative letter spacing on Haas Grotesk */
+}
+
+h1,
+h2 {
+  font-weight: var(--font-weight-bold);
 }
 
 h1 {
   font-size: var(--h1-font-size);
-  font-weight: var(--font-weight-normal); /* Haas Grotesk h1 display 400 */
+  font-family: var(--title-font-family);
   line-height: 1.2;
 }
 
 h2 {
   font-size: var(--h2-font-size);
-  font-weight: var(--font-weight-normal); /* display h2 400 */
 }
 
 h3 {
@@ -129,32 +132,51 @@ a:hover {
 .custom-link {
   display: inline-block;
   text-decoration: none;
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  color: var(--white-color) !important;
-  font-weight: var(--font-weight-semibold);
-  line-height: 48px;
-  height: 48px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  pointer-events: auto;
+  font-weight: var(--font-weight-bold);
+  line-height: 44px;
   position: relative;
-  padding: 0 24px;
+  padding: 0 32px;
   box-sizing: border-box;
   margin: 0;
-  border-radius: 12px; /* rounded.lg = 12px */
-  text-align: center;
-  font-size: 16px; /* button font-size = 16px */
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  cursor: pointer;
-}
-
-.custom-link:hover {
-  background-color: var(--primary-active);
-  border-color: var(--primary-active);
-  box-shadow: none;
-  transform: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  z-index: 1;
 }
 
 .custom-link::before {
-  display: none;
+  content: "";
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: -1;
+}
+
+.custom-link:hover {
+  color: var(--white-color) !important;
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(42, 111, 93, 0.15);
+  transform: translateY(-2px);
+}
+
+.custom-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 b,
@@ -247,9 +269,9 @@ strong {
   HERO              
 -----------------------------------------*/
 .hero {  
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background: var(--white-color); /* pure white canvas, no gradients */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: radial-gradient(circle at 10% 20%, rgba(232, 243, 241, 0.4) 0%, rgba(255, 255, 255, 1) 90%);
 }
 
 .hero .container {
@@ -261,25 +283,31 @@ strong {
 
 .hero-image-wrap {
   position: relative;
-  border-radius: 12px; /* rounded.lg = 12px */
-  box-shadow: none;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(42, 111, 93, 0.1) 0%, rgba(255,255,255,0.8) 100%);
+  border-radius: 30px;
+  box-shadow: 0 25px 50px rgba(42, 111, 93, 0.08);
+  transition: transform 0.5s ease;
+}
+
+.hero-image-wrap:hover {
+  transform: translateY(-5px);
 }
 
 .hero-split-image {
   width: 100%;
-  height: 460px;
+  height: 480px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 24px;
   display: block;
 }
 
 .bg-primary-light {
   background-color: var(--primary-light) !important;
-  color: var(--primary-color) !important;
 }
 
 .contact-phone {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   color: var(--primary-color);
 }
 
@@ -327,30 +355,32 @@ strong {
 .navbar {
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: var(--white-color) !important;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: none !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
   transition: all 0.3s ease;
 }
 
 .navbar-brand {
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
   font-family: var(--title-font-family);
-  font-size: 20px;
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--h5-font-size);
+  font-weight: var(--font-weight-bold);
   margin: 0 30px;
   padding: 0;
   text-align: center;
 }
 
 .navbar-brand strong {
-  color: var(--muted-color);
+  color: var(--p-color);
   font-family: var(--body-font-family);
   font-size: 11px;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
-  bottom: 0px;
+  bottom: 2px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -359,29 +389,39 @@ strong {
 }
 
 .navbar-nav .nav-link {
-  color: var(--dark-color) !important;
+  color: var(--p-color);
   font-weight: var(--font-weight-semibold);
   font-size: var(--menu-font-size);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   position: relative;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
 }
 
 .navbar-nav .nav-link::after {
-  display: none; /* no underline bars on Airtable nav */
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-item.active .nav-link::after,
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .navbar-nav .nav-item.active .nav-link, 
 .nav-link:focus, 
 .nav-link:hover {
-  color: var(--primary-color) !important;
-  opacity: 1;
+  color: var(--primary-color);
 }
 
 .nav-link:focus {
-  color: var(--dark-color) !important;
+  color: var(--p-color);
 }
 
 .navbar-toggler {
@@ -456,16 +496,15 @@ strong {
 .gallery-item-wrap {
   position: relative;
   overflow: hidden;
-  border-radius: 10px; /* rounded.md = 10px */
-  box-shadow: none;
-  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(31, 45, 41, 0.08);
   height: 380px;
   width: 100%;
 }
 
 .gallery-item-wrap .galleryImage {
-  border-radius: 10px;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 20px;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -477,13 +516,13 @@ strong {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to top, rgba(31, 45, 41, 0.95) 0%, rgba(31, 45, 41, 0.2) 70%, rgba(31, 45, 41, 0) 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
   display: flex;
   align-items: flex-end;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
@@ -525,23 +564,23 @@ strong {
   STEP CARDS               
 -----------------------------------------*/
 .step-card {
-  border-radius: 12px; /* rounded.lg = 12px */
+  border-radius: 20px;
   border: 1px solid var(--border-color);
-  transition: border-color 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
-  background: var(--white-color);
-  box-shadow: none !important; /* flat card elevation */
 }
 
 .step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.06) !important;
   border-color: var(--primary-color);
 }
 
 .step-number {
   font-family: var(--title-font-family);
   font-size: 3rem;
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   color: var(--primary-color);
   opacity: 0.15;
   display: block;
@@ -550,53 +589,30 @@ strong {
 }
 
 .step-card:hover .step-number {
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .highlighted-step {
-  border-color: var(--border-color);
-  background: var(--primary-light) !important; /* Soft Blue / Surface Soft */
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--white-color) 0%, var(--primary-light) 100%) !important;
 }
 
-/* Alternating Rhythm Sections */
-#about {
-    background-color: var(--signature-cream); /* Cream Signature background */
-    border-bottom: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-}
-
-#timeline {
-    background-color: var(--white-color); /* White Canvas */
-}
-
-#gallery {
-    background-color: var(--white-color); /* White Canvas */
-}
-
-#reviews {
-    background-color: var(--primary-light); /* Soft-Blue / Surface Soft */
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-#booking {
-    background-color: var(--white-color); /* White Canvas */
-}
-
+/*---------------------------------------
+  PRICING PACKAGES               
+-----------------------------------------*/
 .package-card {
-  border-radius: 18px;
+  border-radius: 24px;
   border: 1px solid var(--border-color);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
   height: 100%;
-  background: var(--white-color);
-  box-shadow: none !important;
 }
 
 .package-card:hover {
-  transform: scale(1.02);
-  border-color: var(--border-color);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(42, 111, 93, 0.1) !important;
+  border-color: var(--primary-color);
 }
 
 .package-title {
@@ -606,7 +622,7 @@ strong {
 }
 
 .package-price {
-  color: var(--dark-color);
+  color: var(--primary-color);
   font-family: var(--title-font-family);
   display: flex;
   justify-content: center;
@@ -614,19 +630,19 @@ strong {
 }
 
 .package-price .currency {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: var(--font-weight-semibold);
 }
 
 .package-price .price-val {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: var(--font-weight-bold);
   margin: 0 4px;
 }
 
 .package-price .duration {
   font-size: 1rem;
-  color: var(--muted-color);
+  color: var(--p-color);
   font-family: var(--body-font-family);
 }
 
@@ -641,18 +657,18 @@ strong {
 }
 
 .highlighted-package {
-  border-color: var(--primary-color) !important;
-  box-shadow: none !important;
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.05);
 }
 
 .popular-badge {
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 11px;
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 4px 12px;
+  letter-spacing: 1px;
+  padding: 6px 16px;
   border-radius: 50px;
   display: inline-block;
 }
@@ -662,29 +678,29 @@ strong {
 -----------------------------------------*/
 .reviews-thumb {
   margin-bottom: 0;
-  padding: 32px;
+  padding: 36px;
   background: var(--white-color);
   border: 1px solid var(--border-color);
-  transition: border-color 0.2s ease;
-  border-radius: 10px !important; /* rounded.md = 10px */
-  box-shadow: none !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 .reviews-thumb:hover {
-  border-color: var(--border-color);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.05);
 }
 
 .reviews-stars i {
-  color: var(--primary-color); /* Ink rating stars per Airtable specs */
+  color: #f1c40f;
   margin-right: 2px;
-  font-size: 13px;
 }
 
 .reviews-thumb .text-primary {
   color: var(--primary-color) !important;
   font-family: var(--title-font-family);
   font-size: var(--h6-font-size);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   margin-top: 15px !important;
 }
 
@@ -692,24 +708,23 @@ strong {
   margin-top: 10px;
   margin-bottom: 25px;
   color: var(--p-color);
-  line-height: 1.4;
-  font-size: var(--p-font-size);
+  line-height: 1.6;
 }
 
 .reviews-image {
   border-radius: 100px;
-  width: 64px !important;
-  height: 64px !important;
-  border: 1px solid var(--border-color);
+  width: 70px !important;
+  height: 70px !important;
+  border: 3px solid var(--border-color);
 }
 
 .reviews-thumb figcaption strong {
   color: var(--dark-color);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
 }
 
 .reviews-thumb figcaption .text-muted {
-  color: var(--muted-color) !important;
+  color: var(--p-color) !important;
 }
 
 .reviews-carousel .owl-item {
@@ -722,30 +737,30 @@ strong {
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb {
-  background: var(--white-color);
+  background: var(--primary-color);
   border-color: var(--primary-color);
-  border-width: 1px;
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.18);
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb:hover {
-  border-color: var(--primary-color);
+  transform: translateY(-4px);
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-text,
 .reviews-carousel .owl-item.active.center .reviews-thumb figcaption strong {
-  color: var(--dark-color) !important;
+  color: var(--white-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-primary {
-  color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-muted {
-  color: var(--muted-color) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-image {
-  border-color: var(--border-color);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .reviews-carousel .owl-nav {
@@ -803,54 +818,47 @@ strong {
   BOOKING & INQUIRY               
 -----------------------------------------*/
 .booking-form {
-  border-radius: 12px !important; /* rounded.lg = 12px */
+  border-radius: 24px !important;
   border: 1px solid var(--border-color);
-  box-shadow: none !important;
-  background: var(--signature-cream); /* Cream callout background */
-  padding: 40px !important;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.02) !important;
 }
 
 .booking-form .form-control,
 .booking-form .form-select {
-  background: var(--white-color);
+  background: var(--section-bg-color);
   border: 1px solid var(--border-color);
-  border-radius: 6px; /* rounded.sm = 6px */
+  border-radius: 12px;
   color: var(--dark-color);
   font-weight: var(--font-weight-normal);
-  padding: 12px 16px;
-  transition: all 0.2s ease;
+  padding: 14px 20px;
+  transition: all 0.3s ease;
   margin-top: 0;
-  font-size: 14px; /* body-md = 14px */
 }
 
 .booking-form .form-control:focus,
 .booking-form .form-select:focus {
   background: var(--white-color);
-  border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 2px #458fff; /* Info border */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(42, 111, 93, 0.1);
   color: var(--dark-color);
-  outline: none;
 }
 
 .booking-form #submit-button {
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  font-weight: var(--font-weight-semibold);
+  background: var(--primary-color);
+  border: 0;
+  font-weight: var(--font-weight-bold);
   color: var(--white-color);
-  text-transform: none; /* No all-caps on Airtable buttons */
-  letter-spacing: 0px;
-  border-radius: 12px; /* rounded.lg = 12px */
-  height: 48px;
-  padding: 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  font-size: 16px;
 }
 
 .booking-form #submit-button:hover {
-  background-color: var(--primary-active);
-  border-color: var(--primary-active);
-  box-shadow: none;
+  background: var(--primary-hover);
+  box-shadow: 0 10px 20px rgba(42, 111, 93, 0.2);
+  transform: translateY(-2px);
 }
 
 /*---------------------------------------
