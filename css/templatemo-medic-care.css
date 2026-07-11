@@ -45,6 +45,21 @@ body {
     padding-top: 94px;
 }
 
+/* Override bootstrap default blues to keep theme purely minimal and greenish */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
@@ -271,7 +286,7 @@ strong {
 .hero {  
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background: radial-gradient(circle at 10% 20%, rgba(232, 243, 241, 0.4) 0%, rgba(255, 255, 255, 1) 90%);
+  background: var(--white-color); /* Clean minimal white canvas */
 }
 
 .hero .container {
@@ -284,9 +299,10 @@ strong {
 .hero-image-wrap {
   position: relative;
   padding: 10px;
-  background: linear-gradient(135deg, rgba(42, 111, 93, 0.1) 0%, rgba(255,255,255,0.8) 100%);
+  background: #fafbfa; /* Soft off-white green tint border wrap */
+  border: 1px solid var(--border-color);
   border-radius: 30px;
-  box-shadow: 0 25px 50px rgba(42, 111, 93, 0.08);
+  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.04);
   transition: transform 0.5s ease;
 }
 
@@ -320,9 +336,9 @@ strong {
   height: 330px;
   margin: 0 auto;
   padding: 0 20px;
-  background: linear-gradient(135deg, var(--white-color) 0%, var(--primary-light) 100%) !important;
+  background: var(--white-color) !important;
   border: 8px solid var(--white-color);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.08) !important;
+  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.04) !important;
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -355,11 +371,11 @@ strong {
 .navbar {
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none !important;
   transition: all 0.3s ease;
 }
 
@@ -497,7 +513,7 @@ strong {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(31, 45, 41, 0.08);
+  box-shadow: 0 10px 25px rgba(31, 45, 41, 0.03);
   height: 380px;
   width: 100%;
 }
@@ -572,8 +588,8 @@ strong {
 }
 
 .step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.06) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(42, 111, 93, 0.03) !important;
   border-color: var(--primary-color);
 }
 
@@ -594,7 +610,7 @@ strong {
 
 .highlighted-step {
   border-color: var(--primary-color);
-  background: linear-gradient(135deg, var(--white-color) 0%, var(--primary-light) 100%) !important;
+  background: var(--primary-light) !important; /* Solid light green tint */
 }
 
 /*---------------------------------------
@@ -737,9 +753,9 @@ strong {
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb {
-  background: var(--primary-color);
+  background: #f2f8f6; /* Soft green tint for subtle active focus */
   border-color: var(--primary-color);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.18);
+  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.05);
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb:hover {
@@ -748,19 +764,19 @@ strong {
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-text,
 .reviews-carousel .owl-item.active.center .reviews-thumb figcaption strong {
-  color: var(--white-color) !important;
+  color: var(--dark-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-primary {
-  color: var(--white-color) !important;
+  color: var(--primary-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-muted {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--p-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-image {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--primary-color);
 }
 
 .reviews-carousel .owl-nav {
