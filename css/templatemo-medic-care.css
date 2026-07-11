@@ -712,11 +712,17 @@ strong {
 -----------------------------------------*/
 .reviews-thumb {
   margin-bottom: 0;
-  padding: 32px;
+  padding: 36px;
   background: var(--white-color);
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.reviews-thumb:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.05);
 }
 
 .reviews-stars i {
@@ -724,19 +730,40 @@ strong {
   margin-right: 2px;
 }
 
+.reviews-thumb .text-primary {
+  color: var(--primary-color) !important;
+  font-family: var(--title-font-family);
+  font-size: var(--h6-font-size);
+  font-weight: var(--font-weight-bold);
+  margin-top: 15px !important;
+}
+
 .reviews-text {
   margin-top: 10px;
   margin-bottom: 25px;
+  color: var(--p-color);
+  line-height: 1.6;
 }
 
 .reviews-image {
   border-radius: 100px;
   width: 70px !important;
   height: 70px !important;
+  border: 3px solid var(--border-color);
+}
+
+.reviews-thumb figcaption strong {
+  color: var(--dark-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.reviews-thumb figcaption .text-muted {
+  color: var(--p-color) !important;
 }
 
 .reviews-carousel .owl-item {
   opacity: 0.45;
+  transition: opacity 0.4s ease;
 }
 
 .reviews-carousel .owl-item.active.center {
@@ -745,12 +772,29 @@ strong {
 
 .reviews-carousel .owl-item.active.center .reviews-thumb {
   background: var(--primary-color);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.15);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.18);
 }
 
-.reviews-carousel .owl-item.active.center .reviews-thumb,
-.reviews-carousel .owl-item.active.center .reviews-text {
-  color: var(--white-color);
+.reviews-carousel .owl-item.active.center .reviews-thumb:hover {
+  transform: translateY(-4px);
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb .reviews-text,
+.reviews-carousel .owl-item.active.center .reviews-thumb figcaption strong {
+  color: var(--white-color) !important;
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb .text-primary {
+  color: var(--white-color) !important;
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb .reviews-image {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .reviews-carousel .owl-nav {
