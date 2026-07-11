@@ -269,35 +269,41 @@ strong {
   HERO              
 -----------------------------------------*/
 .hero {  
-  padding-top: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: radial-gradient(circle at 10% 20%, rgba(232, 243, 241, 0.4) 0%, rgba(255, 255, 255, 1) 90%);
 }
 
 .hero .container {
   position: relative;
-  overflow: hidden;
-  height: 580px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  overflow: visible;
+  height: auto;
+  box-shadow: none;
 }
 
-.hero .carousel-item img {
+.hero-image-wrap {
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(42, 111, 93, 0.1) 0%, rgba(255,255,255,0.8) 100%);
+  border-radius: 30px;
+  box-shadow: 0 25px 50px rgba(42, 111, 93, 0.08);
+  transition: transform 0.5s ease;
+}
+
+.hero-image-wrap:hover {
+  transform: translateY(-5px);
+}
+
+.hero-split-image {
   width: 100%;
-  height: 580px;
+  height: 480px;
   object-fit: cover;
+  border-radius: 24px;
+  display: block;
 }
 
-.heroText {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  position: absolute;
-  z-index: 2;
-  bottom: 30px;
-  right: 30px;
-  padding: 2.5rem 3rem;
-  width: 46%;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.bg-primary-light {
+  background-color: var(--primary-light) !important;
 }
 
 .contact-phone {
@@ -502,209 +508,116 @@ strong {
 }
 
 /*---------------------------------------
-  TIMELINE               
+  STEP CARDS               
 -----------------------------------------*/
-.timeline,
-.timeline-nodes {
-  position: relative;
-}
-
-.timeline-nodes:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.timeline h3, 
-.timeline p {
-  padding: 15px 30px;
-} 
-
-.timeline h3 {
-  background: var(--primary-color);
-  font-family: var(--title-font-family);
-  font-size: var(--h5-font-size);
-  margin-bottom: 0;
-}
-
-.timeline::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  width: 0;
-  border-left: 1px solid var(--border-color);
-  height: calc(100% - 100px);
-  z-index: 1;
-  transform: translateX(-50%);
-}
-
-.timeline-content {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
+.step-card {
+  border-radius: 20px;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-  padding: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.timeline-content:hover {
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.05) !important;
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.06) !important;
   border-color: var(--primary-color);
 }
 
-.timeline-nodes:nth-child(odd) h3,
-.timeline-nodes:nth-child(odd) p {
-  text-align: right;
-}
-
-.timeline-nodes:nth-child(odd) .timeline-date {
-  text-align: left;
-}
- 
-.timeline-nodes:nth-child(even) .timeline-date {
-  text-align: right;
-}
-
-.timeline-nodes:nth-child(odd) h3::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(0, -50%);
-  width: 0;
-  border-left: 10px solid var(--dark-color);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-.timeline-nodes h3 {
-  position: relative;
-  border-radius: 16px 16px 0 0;
-}
-
-.timeline-nodes:nth-child(even) h3::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  transform: translate(0, -50%);
-  width: 0;
-  border-right: 10px solid var(--dark-color);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-.timeline-icons {
-  position: relative;
-  z-index: 100;
-}
-
-.timeline-icons::before {
-  content: "";
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%,0);
-  background: var(--white-color);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-  z-index: 1;
-}
-
-.timeline-icon {
-  position: relative;
-  z-index: 100;
-  font-size: var(--h3-font-size);
+.step-number {
+  font-family: var(--title-font-family);
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
   color: var(--primary-color);
+  opacity: 0.15;
   display: block;
-  text-align: center;
-  line-height: 80px;
+  line-height: 1;
+  transition: opacity 0.4s ease;
 }
 
-@media (max-width: 767px) {
-  .timeline-nodes:nth-child(odd) h3,
-  .timeline-nodes:nth-child(odd) p {
-    text-align: left;
-  }
-
-  .timeline-nodes:nth-child(even) {
-    flex-direction: row;
-  }
-
-  .timeline::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 33px;
-    width: 0;
-    height: 90%;
-    z-index: 1;
-    transform: translateX(-50%);
-  }
-
-  .timeline-icons {
-    position: absolute;
-    left: 0%;
-    top: 60px;
-  }
-
-  .timeline-nodes:nth-child(odd) h3::after {
-    left: auto;
-    right: 100%;
-    border-left: 0;
-    border-right: 10px solid var(--dark-color);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
-
-  .timeline-nodes:nth-child(even) h3::after {
-    right: 100%;
-    width: 0;
-    border-right: 10px solid var(--dark-color);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
-
-  .timeline-nodes:nth-child(even) .timeline-date {
-    text-align: left;
-  }
-
-  .timeline-icons::before {
-    width: 75px;
-    height: 75px;
-  }
-
-  .timeline-icon {
-    line-height: 75px;
-  }
+.step-card:hover .step-number {
+  opacity: 0.35;
 }
 
-@media (max-width: 575px) {
-  .timeline::before {
-    content: "";
-    display: block;
-    top: 60px;
-    left: 57px;
-    height: 87%;
-  }
+.highlighted-step {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--white-color) 0%, var(--primary-light) 100%) !important;
+}
 
-  .timeline-icons {
-    position: absolute;
-    left: -10px;
-  }
+/*---------------------------------------
+  PRICING PACKAGES               
+-----------------------------------------*/
+.package-card {
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
 
-  .timeline-icons::before {
-    width: 70px;
-    height: 70px;
-  }
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(42, 111, 93, 0.1) !important;
+  border-color: var(--primary-color);
+}
 
-  .timeline-icon {
-    line-height: 70px;
-  }
+.package-title {
+  font-family: var(--title-font-family);
+  font-weight: var(--font-weight-bold);
+  color: var(--dark-color);
+}
+
+.package-price {
+  color: var(--primary-color);
+  font-family: var(--title-font-family);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.package-price .currency {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.package-price .price-val {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  margin: 0 4px;
+}
+
+.package-price .duration {
+  font-size: 1rem;
+  color: var(--p-color);
+  font-family: var(--body-font-family);
+}
+
+.package-features li {
+  font-size: 15px;
+  color: var(--p-color);
+}
+
+.package-features li i {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.highlighted-package {
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.05);
+}
+
+.popular-badge {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
 }
 
 /*---------------------------------------
@@ -849,33 +762,50 @@ strong {
 }
 
 /*---------------------------------------
-  BOOKING FORM            
+  BOOKING & INQUIRY               
 -----------------------------------------*/
+.booking-form {
+  border-radius: 24px !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.02) !important;
+}
 
-.booking-form .form-control {
-  background: transparent;
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px solid var(--border-color);
-  color: #6c757d;
+.booking-form .form-control,
+.booking-form .form-select {
+  background: var(--section-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--dark-color);
   font-weight: var(--font-weight-normal);
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-top: 15px;
-  transition: all 0.3s;
+  padding: 14px 20px;
+  transition: all 0.3s ease;
+  margin-top: 0;
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+  background: var(--white-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(42, 111, 93, 0.1);
+  color: var(--dark-color);
 }
 
 .booking-form #submit-button {
-  background: var(--dark-color);
-  border-bottom: 0;
-  font-weight: var(--font-weight-semibold);
+  background: var(--primary-color);
+  border: 0;
+  font-weight: var(--font-weight-bold);
   color: var(--white-color);
   text-transform: uppercase;
-  margin-top: 35px;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .booking-form #submit-button:hover {
-  background: var(--primary-color);
+  background: var(--primary-hover);
+  box-shadow: 0 10px 20px rgba(42, 111, 93, 0.2);
+  transform: translateY(-2px);
 }
 
 /*---------------------------------------
@@ -926,7 +856,7 @@ strong {
 -----------------------------------------*/
 @media screen and (min-width: 1600px) {
   .hero .container {
-    height: 740px;
+    height: auto;
   }
 }
 
