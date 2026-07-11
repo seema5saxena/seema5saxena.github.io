@@ -10,32 +10,34 @@ https://templatemo.com/tm-566-medic-care
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #FFFFFF;
-  --primary-color:                #2a6f5d; /* Calm Ayurvedic Sage Green/Teal */
-  --primary-light:                #e8f3f1; /* Soft green tint */
-  --primary-hover:                #1b4c3f; /* Deeper Green on Hover */
-  --section-bg-color:             #f7f9f8; /* Soft green-grey background */
-  --dark-color:                   #1f2d29; /* Soft charcoal-green instead of harsh black */
-  --title-color:                  #2b3f3a; 
-  --p-color:                      #4f635e; /* Elegant grey-green body text */
-  --border-color:                 #e0e7e4;
+  --white-color:                  #ffffff;
+  --primary-color:                #ff385c; /* Airbnb Rausch */
+  --primary-active:               #e00b41; /* Rausch Active */
+  --primary-light:                #ffd1da; /* Rausch Disabled / Soft Tint */
+  --section-bg-color:             #f7f7f7; /* Surface Soft */
+  --dark-color:                   #222222; /* Ink */
+  --title-color:                  #222222; /* Ink */
+  --p-color:                      #3f3f3f; /* Body text */
+  --muted-color:                  #6a6a6a; /* Muted */
+  --border-color:                 #dddddd; /* Hairline */
+  --border-soft:                  #ebebeb; /* Hairline Soft */
 
-  --body-font-family:             'Plus Jakarta Sans', sans-serif;
-  --title-font-family:            'Playfair Display', serif;
+  --body-font-family:             'Inter', -apple-system, system-ui, sans-serif;
+  --title-font-family:            'Inter', -apple-system, system-ui, sans-serif;
 
-  --h1-font-size:                 52px;
-  --h2-font-size:                 40px;
-  --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 20px;
-  --p-font-size:                  17px;
-  --menu-font-size:               16px;
+  --h1-font-size:                 38px; /* Modest weight and sizing per Airbnb specs */
+  --h2-font-size:                 28px;
+  --h3-font-size:                 22px;
+  --h4-font-size:                 20px;
+  --h5-font-size:                 18px;
+  --h6-font-size:                 16px;
+  --p-font-size:                  16px;
+  --menu-font-size:               15px;
 
   --font-weight-light:            300;
   --font-weight-normal:           400;
-  --font-weight-semibold:         600;
-  --font-weight-bold:             700;
+  --font-weight-semibold:         500;
+  --font-weight-bold:             600;
 }
 
 body {
@@ -43,12 +45,14 @@ body {
     font-family: var(--body-font-family);    
     position: relative;
     padding-top: 94px;
+    color: var(--p-color);
 }
 
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
 
+h1,
 h2,
 h3,
 h4,
@@ -56,7 +60,9 @@ h5,
 h6 {
   color: var(--dark-color);
   font-family: var(--title-font-family);
+  font-weight: var(--font-weight-bold);
   line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
 h1,
@@ -75,7 +81,6 @@ h2 {
 
 h1 {
   font-size: var(--h1-font-size);
-  font-family: var(--title-font-family);
   line-height: 1.2;
 }
 
@@ -132,51 +137,32 @@ a:hover {
 .custom-link {
   display: inline-block;
   text-decoration: none;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  pointer-events: auto;
-  font-weight: var(--font-weight-bold);
-  line-height: 44px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white-color) !important;
+  font-weight: var(--font-weight-semibold);
+  line-height: 48px;
+  height: 48px;
   position: relative;
-  padding: 0 32px;
+  padding: 0 24px;
   box-sizing: border-box;
   margin: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  overflow: hidden;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 13px;
-  z-index: 1;
-}
-
-.custom-link::before {
-  content: "";
-  background-color: var(--primary-color);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  z-index: -1;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .custom-link:hover {
-  color: var(--white-color) !important;
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 20px rgba(42, 111, 93, 0.15);
-  transform: translateY(-2px);
+  background-color: var(--primary-active);
+  border-color: var(--primary-active);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px, rgba(0, 0, 0, 0.1) 0 4px 8px;
+  transform: translateY(-1px);
 }
 
-.custom-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
+.custom-link::before {
+  display: none;
 }
 
 b,
@@ -269,9 +255,9 @@ strong {
   HERO              
 -----------------------------------------*/
 .hero {  
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background: radial-gradient(circle at 10% 20%, rgba(232, 243, 241, 0.4) 0%, rgba(255, 255, 255, 1) 90%);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: var(--white-color);
 }
 
 .hero .container {
@@ -283,32 +269,32 @@ strong {
 
 .hero-image-wrap {
   position: relative;
-  padding: 10px;
-  background: linear-gradient(135deg, rgba(42, 111, 93, 0.1) 0%, rgba(255,255,255,0.8) 100%);
-  border-radius: 30px;
-  box-shadow: 0 25px 50px rgba(42, 111, 93, 0.08);
-  transition: transform 0.5s ease;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px, rgba(0, 0, 0, 0.1) 0 4px 8px;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hero-image-wrap:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 6px 12px, rgba(0, 0, 0, 0.12) 0 10px 20px;
 }
 
 .hero-split-image {
   width: 100%;
-  height: 480px;
+  height: 460px;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 14px;
   display: block;
 }
 
 .bg-primary-light {
   background-color: var(--primary-light) !important;
+  color: var(--primary-active) !important;
 }
 
 .contact-phone {
   font-weight: var(--font-weight-bold);
-  color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 /*---------------------------------------
@@ -355,32 +341,31 @@ strong {
 .navbar {
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+  background-color: var(--white-color) !important;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none !important;
   transition: all 0.3s ease;
 }
 
 .navbar-brand {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   font-family: var(--title-font-family);
-  font-size: var(--h5-font-size);
+  font-size: 20px;
   font-weight: var(--font-weight-bold);
   margin: 0 30px;
   padding: 0;
   text-align: center;
+  letter-spacing: -0.5px;
 }
 
 .navbar-brand strong {
-  color: var(--p-color);
+  color: var(--muted-color);
   font-family: var(--body-font-family);
   font-size: 11px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   position: relative;
-  bottom: 2px;
+  bottom: 0px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -389,7 +374,7 @@ strong {
 }
 
 .navbar-nav .nav-link {
-  color: var(--p-color);
+  color: var(--dark-color) !important;
   font-weight: var(--font-weight-semibold);
   font-size: var(--menu-font-size);
   padding-top: 15px;
@@ -400,13 +385,13 @@ strong {
 .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 8px;
+  bottom: 4px;
   left: 1.5rem;
   right: 1.5rem;
   height: 2px;
   background-color: var(--primary-color);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .navbar-nav .nav-item.active .nav-link::after,
@@ -417,11 +402,11 @@ strong {
 .navbar-nav .nav-item.active .nav-link, 
 .nav-link:focus, 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .nav-link:focus {
-  color: var(--p-color);
+  color: var(--dark-color) !important;
 }
 
 .navbar-toggler {
@@ -516,7 +501,7 @@ strong {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(31, 45, 41, 0.95) 0%, rgba(31, 45, 41, 0.2) 70%, rgba(31, 45, 41, 0) 100%);
+  background: linear-gradient(to top, rgba(34, 34, 34, 0.95) 0%, rgba(34, 34, 34, 0.2) 70%, rgba(34, 34, 34, 0) 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
   display: flex;
@@ -564,17 +549,18 @@ strong {
   STEP CARDS               
 -----------------------------------------*/
 .step-card {
-  border-radius: 20px;
+  border-radius: 14px;
   border: 1px solid var(--border-color);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
+  background: var(--white-color);
 }
 
 .step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.06) !important;
-  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 6px 12px, rgba(0, 0, 0, 0.1) 0 10px 20px !important;
+  border-color: var(--border-color);
 }
 
 .step-number {
@@ -589,11 +575,11 @@ strong {
 }
 
 .step-card:hover .step-number {
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .highlighted-step {
-  border-color: var(--primary-color);
+  border-color: var(--border-color);
   background: linear-gradient(135deg, var(--white-color) 0%, var(--primary-light) 100%) !important;
 }
 
@@ -601,18 +587,19 @@ strong {
   PRICING PACKAGES               
 -----------------------------------------*/
 .package-card {
-  border-radius: 24px;
+  border-radius: 14px;
   border: 1px solid var(--border-color);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
   height: 100%;
+  background: var(--white-color);
 }
 
 .package-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(42, 111, 93, 0.1) !important;
-  border-color: var(--primary-color);
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 6px 12px, rgba(0, 0, 0, 0.1) 0 10px 20px !important;
+  border-color: var(--border-color);
 }
 
 .package-title {
@@ -622,7 +609,7 @@ strong {
 }
 
 .package-price {
-  color: var(--primary-color);
+  color: var(--dark-color);
   font-family: var(--title-font-family);
   display: flex;
   justify-content: center;
@@ -630,19 +617,19 @@ strong {
 }
 
 .package-price .currency {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: var(--font-weight-semibold);
 }
 
 .package-price .price-val {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: var(--font-weight-bold);
   margin: 0 4px;
 }
 
 .package-price .duration {
   font-size: 1rem;
-  color: var(--p-color);
+  color: var(--muted-color);
   font-family: var(--body-font-family);
 }
 
@@ -657,18 +644,18 @@ strong {
 }
 
 .highlighted-package {
-  border-color: var(--primary-color);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.05);
+  border-color: var(--primary-color) !important;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px, rgba(0, 0, 0, 0.1) 0 4px 8px;
 }
 
 .popular-badge {
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 11px;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 16px;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
   border-radius: 50px;
   display: inline-block;
 }
@@ -678,22 +665,22 @@ strong {
 -----------------------------------------*/
 .reviews-thumb {
   margin-bottom: 0;
-  padding: 36px;
+  padding: 32px;
   background: var(--white-color);
   border: 1px solid var(--border-color);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-radius: 20px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  border-radius: 14px !important;
 }
 
 .reviews-thumb:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(42, 111, 93, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 6px 12px, rgba(0, 0, 0, 0.1) 0 10px 20px;
 }
 
 .reviews-stars i {
-  color: #f1c40f;
+  color: var(--dark-color); /* Ink rating stars per Airbnb spec */
   margin-right: 2px;
+  font-size: 13px;
 }
 
 .reviews-thumb .text-primary {
@@ -708,23 +695,24 @@ strong {
   margin-top: 10px;
   margin-bottom: 25px;
   color: var(--p-color);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: var(--p-font-size);
 }
 
 .reviews-image {
   border-radius: 100px;
-  width: 70px !important;
-  height: 70px !important;
-  border: 3px solid var(--border-color);
+  width: 64px !important;
+  height: 64px !important;
+  border: 2px solid var(--border-color);
 }
 
 .reviews-thumb figcaption strong {
   color: var(--dark-color);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
 }
 
 .reviews-thumb figcaption .text-muted {
-  color: var(--p-color) !important;
+  color: var(--muted-color) !important;
 }
 
 .reviews-carousel .owl-item {
@@ -737,9 +725,10 @@ strong {
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb {
-  background: var(--primary-color);
+  background: var(--white-color);
   border-color: var(--primary-color);
-  box-shadow: 0 20px 40px rgba(42, 111, 93, 0.18);
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 6px 12px, rgba(0, 0, 0, 0.1) 0 10px 20px;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb:hover {
@@ -748,19 +737,19 @@ strong {
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-text,
 .reviews-carousel .owl-item.active.center .reviews-thumb figcaption strong {
-  color: var(--white-color) !important;
+  color: var(--dark-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-primary {
-  color: var(--white-color) !important;
+  color: var(--primary-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .text-muted {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--muted-color) !important;
 }
 
 .reviews-carousel .owl-item.active.center .reviews-thumb .reviews-image {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--border-color);
 }
 
 .reviews-carousel .owl-nav {
@@ -818,47 +807,52 @@ strong {
   BOOKING & INQUIRY               
 -----------------------------------------*/
 .booking-form {
-  border-radius: 24px !important;
+  border-radius: 14px !important;
   border: 1px solid var(--border-color);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.02) !important;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px, rgba(0, 0, 0, 0.1) 0 4px 8px !important;
+  background: var(--white-color);
 }
 
 .booking-form .form-control,
 .booking-form .form-select {
-  background: var(--section-bg-color);
+  background: var(--white-color);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 8px;
   color: var(--dark-color);
   font-weight: var(--font-weight-normal);
-  padding: 14px 20px;
-  transition: all 0.3s ease;
+  padding: 14px 16px;
+  transition: all 0.2s ease;
   margin-top: 0;
 }
 
 .booking-form .form-control:focus,
 .booking-form .form-select:focus {
   background: var(--white-color);
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(42, 111, 93, 0.1);
+  border: 2px solid var(--dark-color) !important;
+  box-shadow: none;
   color: var(--dark-color);
+  outline: none;
 }
 
 .booking-form #submit-button {
-  background: var(--primary-color);
-  border: 0;
-  font-weight: var(--font-weight-bold);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  font-weight: var(--font-weight-semibold);
   color: var(--white-color);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .booking-form #submit-button:hover {
-  background: var(--primary-hover);
-  box-shadow: 0 10px 20px rgba(42, 111, 93, 0.2);
-  transform: translateY(-2px);
+  background-color: var(--primary-active);
+  border-color: var(--primary-active);
+  box-shadow: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px, rgba(0, 0, 0, 0.1) 0 4px 8px;
+  transform: translateY(-1px);
 }
 
 /*---------------------------------------
