@@ -358,107 +358,64 @@ figure {
   padding: 16px 0 var(--section-y);
 }
 
-/* A painting, a headline and one action: nothing else competes */
+/* Sunrise over the Himalaya: one message, one action */
 .hero-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: min(86vh, 760px);
-  padding: 28px 32px;
+  align-items: center;
+  min-height: min(88vh, 780px);
+  padding: 88px 24px 0;
   border-radius: var(--radius-xl);
-  background: #0F2A30;
-  color: var(--bg);
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 70%;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(180deg, rgba(8, 24, 28, 0.35) 0%, rgba(8, 24, 28, 0) 22%),
-    radial-gradient(ellipse 70% 55% at 50% 48%, rgba(8, 24, 28, 0.42) 0%, rgba(8, 24, 28, 0) 100%),
-    linear-gradient(0deg, rgba(8, 24, 28, 0.55) 0%, rgba(8, 24, 28, 0) 30%);
-}
-
-.hero-corners {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  color: rgba(251, 248, 243, 0.78);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-copy {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 48px 0;
+  background: linear-gradient(180deg, #FBF8F2 0%, #F9F0E0 52%, #F5E5C8 100%);
   text-align: center;
 }
 
-.hero-copy h1 {
-  color: var(--bg);
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
 }
 
-.hero-copy h1 em {
-  color: var(--haldi-light);
+.hero-copy h1 {
+  font-size: clamp(46px, 6vw, 80px);
 }
 
 .hero .lede {
-  margin: 22px auto 36px;
-  color: rgba(251, 248, 243, 0.86);
+  max-width: 520px;
+  margin: 24px auto 36px;
+  text-wrap: balance;
+  color: var(--ink-2);
   font-size: var(--fs-lead);
 }
 
-/* Glass pill, like a search bar, carrying the one action */
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  width: min(100%, 520px);
   min-height: 60px;
-  padding: 6px 6px 6px 22px;
-  border: 1px solid rgba(251, 248, 243, 0.4);
+  padding: 6px 6px 6px 24px;
   border-radius: 999px;
-  background: rgba(251, 248, 243, 0.14);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: var(--brand);
+  box-shadow: 0 12px 28px rgba(35, 70, 57, 0.22);
   color: var(--bg);
   font-size: var(--fs-body);
-  font-weight: 500;
-  text-align: left;
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .hero-cta:hover {
-  background: rgba(251, 248, 243, 0.22);
-  border-color: rgba(251, 248, 243, 0.6);
+  background: var(--brand-dark);
   color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(35, 70, 57, 0.26);
 }
 
 .hero-cta > i {
   font-size: 20px;
-}
-
-.hero-cta > span:not(.hero-cta-arrow) {
-  flex: 1;
 }
 
 .hero-cta-arrow {
@@ -467,6 +424,7 @@ figure {
   flex: none;
   width: 48px;
   height: 48px;
+  margin-left: 8px;
   border-radius: 50%;
   background: var(--bg);
   color: var(--brand-dark);
@@ -481,54 +439,59 @@ figure {
   transform: translateX(3px);
 }
 
-.hero-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.hero-note {
-  color: rgba(251, 248, 243, 0.78);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.live-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px 8px 12px;
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 999px;
-  box-shadow: var(--shadow-sm);
-  color: var(--ink);
+.hero-byline {
+  margin: 22px 0 0;
+  color: var(--muted);
   font-size: var(--fs-caption);
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s ease;
 }
 
-.live-chip:hover {
+.hero-byline a {
   color: var(--ink);
-  transform: translateY(-1px);
+  font-weight: 600;
+  text-decoration-color: rgba(47, 93, 79, 0.35);
 }
 
-.lotus-breathe {
-  --mark-bg: var(--surface);
-  flex: none;
-  width: 22px;
-  height: 22px;
-  margin: -3px 0;
-  color: var(--brand);
+/* The horizon: a rising sun behind four ridges in the brand's warm tones */
+.horizon {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: calc(100% + 48px);
+  min-height: 220px;
+  margin-top: 16px;
+  pointer-events: none;
 }
 
-.lotus-breathe path {
-  transform-box: view-box;
-  transform-origin: 32px 45px;
+.sun {
+  position: absolute;
+  left: 50%;
+  bottom: 26%;
+  width: min(240px, 40vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F8DCA0 0%, #F2C676 46%, rgba(242, 198, 118, 0.3) 62%, rgba(242, 198, 118, 0) 72%);
+  translate: -50% 0;
 }
+
+.ridge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* Parallax: further ridges move a little as the page scrolls (set by site.js) */
+  translate: 0 calc(var(--hero-scroll, 0) * var(--ridge-depth, 0) * 1px);
+}
+
+.ridge-far path { fill: #F2E1C3; }
+.ridge-mid path { fill: #EACDA0; }
+.ridge-near path { fill: #DDB386; }
+.ridge-front path { fill: #6F8F80; }
+
+.ridge-far { --ridge-depth: 0.05; }
+.ridge-mid { --ridge-depth: 0.1; }
+.ridge-near { --ridge-depth: 0.16; }
+.ridge-front { --ridge-depth: 0; }
 
 /* Hand-drawn stroke under the hero's italic phrase */
 .underlined {
@@ -549,7 +512,7 @@ figure {
 
 .underlined path {
   fill: var(--haldi);
-  fill-opacity: 0.7;
+  fill-opacity: 0.55;
 }
 
 /* ---------- Sections ---------- */
@@ -570,7 +533,7 @@ figure {
 /* ---------- Heritage ---------- */
 
 .heritage-section {
-  padding: 0 0 var(--section-y);
+  padding: var(--section-y) 0 0;
 }
 
 .heritage {
@@ -747,11 +710,24 @@ figure {
 
 .teacher-collage {
   position: relative;
-  aspect-ratio: 1 / 1.08;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.collage-col {
+  display: grid;
+  gap: 14px;
+}
+
+/* The second column starts lower, so the four photos read as one arrangement */
+.collage-col-offset {
+  margin-top: 56px;
 }
 
 .teacher-collage figure {
-  position: absolute;
+  position: relative;
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -769,55 +745,43 @@ figure {
   transform: scale(1.04);
 }
 
-.collage-main {
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 84%;
+.photo-portrait {
+  aspect-ratio: 4 / 5;
 }
 
-.collage-main img {
+.photo-portrait img {
   object-position: 50% 30%;
 }
 
-.collage-top {
-  top: 6%;
-  right: 0;
-  width: 54%;
+.photo-landscape {
   aspect-ratio: 4 / 3;
-  border: 6px solid var(--bg);
 }
 
-.collage-bottom {
-  right: 6%;
-  bottom: 0;
-  width: 58%;
-  aspect-ratio: 4 / 3;
-  border: 6px solid var(--bg);
-}
-
+/* Labels sit at the top so they never cover faces */
 .teacher-collage figcaption {
   position: absolute;
   left: 10px;
-  bottom: 10px;
+  top: 10px;
   padding: 4px 10px;
   background: rgba(255, 255, 255, 0.92);
   border-radius: 999px;
   color: var(--ink);
   font-size: var(--fs-label);
   font-weight: 600;
+  max-width: calc(100% - 20px);
+  line-height: 1.3;
 }
 
-/* The bottom photo overlaps the main one, so its label sits at the top */
-.collage-main figcaption {
-  top: 10px;
-  bottom: auto;
+.teacher-collage .caption-bottom {
+  top: auto;
+  bottom: 10px;
 }
 
 .collage-seal {
   position: absolute;
+  z-index: 1;
   left: calc(50% - 62px);
-  top: calc(52% - 62px);
+  top: calc(50% - 62px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -877,57 +841,54 @@ figure {
   color: var(--muted);
 }
 
-.journey {
-  position: relative;
+/* Why her, in four tiles */
+.credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   margin-top: 32px;
-  padding-left: 28px;
 }
 
-.journey::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 8px;
-  bottom: 8px;
-  width: 1px;
-  background: var(--line);
+.credentials li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 14px;
+  align-items: center;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
-.journey li {
-  position: relative;
-  padding-bottom: 18px;
+.credentials li:hover {
+  border-color: rgba(47, 93, 79, 0.35);
+  transform: translateY(-2px);
 }
 
-.journey li:last-child {
-  padding-bottom: 0;
-}
-
-.journey li::before {
-  content: "";
-  position: absolute;
-  left: -28px;
-  top: 6px;
-  width: 13px;
-  height: 13px;
-  border: 2px solid var(--brand);
+.credentials i {
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: var(--icon);
+  height: var(--icon);
   border-radius: 50%;
-  background: var(--bg);
+  background: var(--sand);
+  color: var(--brand);
+  font-size: 18px;
 }
 
-.journey li:last-child::before {
-  background: var(--brand);
-}
-
-.journey strong {
-  display: block;
+.credentials strong {
   color: var(--ink);
   font-size: var(--fs-small);
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.journey span {
+.credentials span {
   color: var(--muted);
-  font-size: var(--fs-small);
+  font-size: var(--fs-caption);
+  line-height: 1.4;
 }
 
 /* ---------- Benefits ---------- */
@@ -1452,12 +1413,15 @@ figure {
     animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
 
-  .hero-copy > :nth-child(2) { animation-delay: 0.12s; }
-  .hero-copy > :nth-child(3) { animation-delay: 0.24s; }
+  .hero-copy > :nth-child(2) { animation-delay: 0.1s; }
+  .hero-copy > :nth-child(3) { animation-delay: 0.2s; }
+  .hero-copy > :nth-child(4) { animation-delay: 0.3s; }
 
-  /* The painting settles in slowly as the page opens */
-  .hero-bg {
-    animation: settle 2.4s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  .hero-copy > :nth-child(5) { animation-delay: 0.4s; }
+
+  /* The sun rises once as the page opens */
+  .sun {
+    animation: sunrise 2.6s 0.2s cubic-bezier(0.2, 0.6, 0.2, 1) both;
   }
 
   .benefits-figure::after {
@@ -1519,9 +1483,10 @@ figure {
   50% { transform: scaleY(1.06); }
 }
 
-@keyframes settle {
+@keyframes sunrise {
   from {
-    transform: scale(1.06);
+    opacity: 0.4;
+    transform: translateY(32%);
   }
 }
 
@@ -1577,19 +1542,27 @@ figure {
   }
 
   .hero-card {
-    min-height: 640px;
-    padding: 20px;
+    min-height: 0;
+    padding: 56px 20px 0;
     border-radius: var(--radius-lg);
   }
 
-  .hero-corners span:nth-child(2) {
-    display: none;
+  .horizon {
+    flex: none;
+    width: calc(100% + 40px);
+    height: 240px;
+    min-height: 0;
+    margin-top: 8px;
   }
 
-  .hero-bottom {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .hero-cta {
+    gap: 10px;
+    padding-left: 18px;
+    font-size: var(--fs-small);
+  }
+
+  .credentials {
+    grid-template-columns: 1fr;
   }
 
   .heritage {
