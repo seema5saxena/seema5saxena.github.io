@@ -327,6 +327,125 @@ strong {
   color: var(--primary-color);
 }
 
+.hero-title {
+  font-size: 46px;
+  line-height: 1.15;
+}
+
+.hero-btn {
+  border-radius: 100px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-btn-whatsapp {
+  background-color: var(--white-color);
+  border: 2px solid #25D366;
+  color: #128C4A;
+}
+
+.hero-btn-whatsapp:hover,
+.hero-btn-whatsapp:focus {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: var(--white-color);
+}
+
+.hero-price {
+  color: var(--title-color);
+  font-size: 16px;
+}
+
+.hero-price i {
+  color: var(--primary-color);
+}
+
+.hero-facts li {
+  background: var(--section-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: var(--title-color);
+}
+
+.hero-facts i {
+  color: var(--primary-color);
+  margin-right: 6px;
+}
+
+.hero .hero-split-image {
+  object-position: center 30%;
+}
+
+.hero-image-tag {
+  position: absolute;
+  left: 26px;
+  bottom: 26px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--title-color);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/*---------------------------------------
+  FLOATING WHATSAPP
+-----------------------------------------*/
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  font-size: 15px;
+  padding: 12px 20px 12px 16px;
+  border-radius: 100px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float i {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  color: var(--white-color);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+@media screen and (max-width: 575px) {
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero .hero-split-image {
+    height: 380px;
+  }
+
+  .whatsapp-float {
+    padding: 14px;
+  }
+
+  .whatsapp-float-label {
+    display: none;
+  }
+}
+
 /*---------------------------------------
   FEATURED              
 -----------------------------------------*/
