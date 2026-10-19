@@ -143,7 +143,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Mukta:wght@500;600&display=swap" rel="stylesheet">
-        <link rel="preload" as="image" href="images/site/seema-hero.jpg">
+        <link rel="preload" as="image" href="images/site/hero-himalayas.jpg">
         <script src="js/site.js"></script>
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/site.css" rel="stylesheet">
@@ -178,50 +178,34 @@
 
             <!-- HERO -->
             <section class="hero" id="top">
-                <div class="container hero-grid">
+                <div class="container">
+                    <div class="hero-card">
+                        <img class="hero-bg" src="images/site/hero-himalayas.jpg" width="1920" height="954" alt="" fetchpriority="high">
 
-                    <div class="hero-copy">
-                        <p class="eyebrow">Online classes · Delhi NCR &amp; India</p>
-                        <h1>Live online yoga, guided by an <em class="underlined">Ayurvedic doctor<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 60 7, 170 3, 298 6 C 296 8, 292 9, 286 9.5 C 180 10, 90 13.5, 6 18 C 2 18, 0 15.5, 2 14 Z"/></svg></em></h1>
-                        <p class="lede">Small morning batches with Dr. Seema Saxena, from the comfort of home. Gentle, personal guidance that's safe for every age and every body.</p>
-
-                        <div class="hero-actions">
-                            <a class="btn" href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20yoga%20class." target="_blank" rel="noopener">
-                                <i class="bi-whatsapp" aria-hidden="true"></i> Book a free trial class
-                            </a>
-                            <a class="text-link" href="#timings">See class timings <i class="bi-arrow-right" aria-hidden="true"></i></a>
+                        <div class="hero-corners" aria-hidden="true">
+                            <span>Live online yoga</span>
+                            <span>With Dr. Seema Saxena</span>
+                            <span>Delhi NCR &amp; India</span>
                         </div>
 
-                        <ul class="trust" aria-label="Credentials">
-                            <li>
-                                <span class="trust-icon"><i class="bi-hourglass-split" aria-hidden="true"></i></span>
-                                <span><strong>25 years</strong>of yoga &amp; Ayurveda</span>
-                            </li>
-                            <li>
-                                <span class="trust-icon"><i class="bi-award" aria-hidden="true"></i></span>
-                                <span><strong>Patanjali Yogpeeth</strong>founding medical team</span>
-                            </li>
-                            <li>
-                                <span class="trust-icon"><i class="bi-patch-check" aria-hidden="true"></i></span>
-                                <span><strong>MDNIY graduate</strong>National Institute of Yoga</span>
-                            </li>
-                        </ul>
-                    </div>
+                        <div class="hero-copy">
+                            <h1>Live online yoga, guided by an <em class="underlined">Ayurvedic doctor<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 60 7, 170 3, 298 6 C 296 8, 292 9, 286 9.5 C 180 10, 90 13.5, 6 18 C 2 18, 0 15.5, 2 14 Z"/></svg></em></h1>
+                            <p class="lede">Small morning batches with Dr. Seema Saxena, from the comfort of home.</p>
+                            <a class="hero-cta" href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20yoga%20class." target="_blank" rel="noopener">
+                                <i class="bi-whatsapp" aria-hidden="true"></i>
+                                <span>Book a free trial class on WhatsApp</span>
+                                <span class="hero-cta-arrow" aria-hidden="true"><i class="bi-arrow-right"></i></span>
+                            </a>
+                        </div>
 
-                    <figure class="hero-photo">
-                        <div class="hero-photo-frame">
-                            <img src="images/site/seema-hero.jpg" width="768" height="1024" alt="Dr. Seema Saxena sitting in lotus pose, meditating on a lakeside dock" fetchpriority="high">
+                        <div class="hero-bottom">
                             <a class="live-chip" href="#timings">
                                 <svg class="lotus lotus-breathe" viewBox="0 0 64 64" aria-hidden="true"><path class="p-ll" d="M30.5 46 C 20 48, 10 45, 5.5 39 C 15 37, 25 39.5, 30.5 46 Z"/><path class="p-lr" d="M33.5 46 C 44 48, 54 45, 58.5 39 C 49 37, 39 39.5, 33.5 46 Z"/><path class="p-l" d="M31.5 45 C 18.5 44, 11.5 34, 12.5 21.5 C 22.5 23.5, 30 31.5, 31.5 45 Z"/><path class="p-r" d="M32.5 45 C 45.5 44, 52.5 34, 51.5 21.5 C 41.5 23.5, 34 31.5, 32.5 45 Z"/><path class="p-c" d="M32 11 C 41.5 20.5, 41.5 36.5, 32 45 C 22.5 36.5, 22.5 20.5, 32 11 Z"/><path class="p-base" d="M19 52.5 C 27 55.5, 37 55.5, 45 52.5"/></svg>
                                 <span data-next-batch>Live every morning · 6:30 – 10:30 AM IST</span>
                             </a>
+                            <span class="hero-note">Hindi &amp; English · First class free</span>
                         </div>
-                        <figcaption class="hero-badge">
-                            <svg class="lotus" viewBox="0 0 64 64" aria-hidden="true"><path class="p-ll" d="M30.5 46 C 20 48, 10 45, 5.5 39 C 15 37, 25 39.5, 30.5 46 Z"/><path class="p-lr" d="M33.5 46 C 44 48, 54 45, 58.5 39 C 49 37, 39 39.5, 33.5 46 Z"/><path class="p-l" d="M31.5 45 C 18.5 44, 11.5 34, 12.5 21.5 C 22.5 23.5, 30 31.5, 31.5 45 Z"/><path class="p-r" d="M32.5 45 C 45.5 44, 52.5 34, 51.5 21.5 C 41.5 23.5, 34 31.5, 32.5 45 Z"/><path class="p-c" d="M32 11 C 41.5 20.5, 41.5 36.5, 32 45 C 22.5 36.5, 22.5 20.5, 32 11 Z"/><path class="p-base" d="M19 52.5 C 27 55.5, 37 55.5, 45 52.5"/></svg>
-                            <span><strong>Dr. Seema Saxena</strong>Ayurvedic doctor &amp; yoga teacher</span>
-                        </figcaption>
-                    </figure>
-
+                    </div>
                 </div>
             </section>
 
@@ -232,8 +216,8 @@
 
                     <div class="teacher-collage" data-reveal>
                         <figure class="collage-main">
-                            <img src="images/site/seema-yoga-day-seattle.jpg" width="472" height="1024" loading="lazy" alt="Dr. Seema Saxena in tree pose beside an International Day of Yoga banner in Seattle">
-                            <figcaption>International Day of Yoga, Seattle</figcaption>
+                            <img src="images/site/seema-hero.jpg" width="768" height="1024" loading="lazy" alt="Dr. Seema Saxena sitting in lotus pose, meditating on a lakeside dock">
+                            <figcaption>Dr. Seema Saxena</figcaption>
                         </figure>
                         <figure class="collage-top">
                             <img src="images/site/seema-swami-ramdev.jpg" width="1200" height="800" loading="lazy" alt="A young Dr. Seema Saxena seated beside Swami Ramdev">
@@ -274,22 +258,42 @@
 
                 </div>
 
-                <aside class="lineage" aria-labelledby="lineage-title" data-reveal>
-                    <figure class="lineage-art">
-                        <img src="images/site/heritage-padmasana.jpg" width="420" height="778" loading="lazy" alt="An 1830 Indian painting of a yogi in padmasana on a tiger skin beside a lotus pond, titled in Devanagari">
-                    </figure>
-                    <div class="lineage-quote">
-                        <p class="lineage-sanskrit" lang="sa">योगः कर्मसु कौशलम्</p>
-                        <p id="lineage-title" class="lineage-english"><em>Yoga is skill in action.</em></p>
-                        <p class="label">Bhagavad Gita 2.50</p>
-                    </div>
-                    <div class="lineage-copy">
-                        <p class="eyebrow">Rooted in tradition</p>
-                        <p>Yoga has passed from teacher to student in India for centuries. Dr. Seema's classes carry that lineage forward, with a doctor's care.</p>
-                        <p class="lineage-caption">Painting: padmasana, from the <i>Joga Pradipika</i>, India, 1830.</p>
-                    </div>
-                </aside>
             </div>
+            </section>
+
+            <!-- HERITAGE -->
+            <section class="heritage-section" aria-labelledby="heritage-title">
+                <div class="container">
+                    <div class="heritage" data-reveal>
+                        <svg class="heritage-grid" viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="32" cy="34" r="30"/>
+                            <circle cx="32" cy="34" r="21"/>
+                            <circle cx="32" cy="45" r="13"/>
+                            <line x1="32" y1="2" x2="32" y2="64"/>
+                            <line x1="0" y1="45" x2="64" y2="45"/>
+                            <line x1="9" y1="11" x2="55" y2="57"/>
+                            <line x1="55" y1="11" x2="9" y2="57"/>
+                            <path d="M30.5 46 C 20 48, 10 45, 5.5 39 C 15 37, 25 39.5, 30.5 46 Z"/>
+                            <path d="M33.5 46 C 44 48, 54 45, 58.5 39 C 49 37, 39 39.5, 33.5 46 Z"/>
+                            <path d="M31.5 45 C 18.5 44, 11.5 34, 12.5 21.5 C 22.5 23.5, 30 31.5, 31.5 45 Z"/>
+                            <path d="M32.5 45 C 45.5 44, 52.5 34, 51.5 21.5 C 41.5 23.5, 34 31.5, 32.5 45 Z"/>
+                            <path d="M32 11 C 41.5 20.5, 41.5 36.5, 32 45 C 22.5 36.5, 22.5 20.5, 32 11 Z"/>
+                        </svg>
+
+                        <figure class="heritage-art">
+                            <img src="images/site/heritage-nurpur.jpg" width="720" height="1045" loading="lazy" alt="A 17th-century Pahari painting of Raja Mandhata seated cross-legged in a yogic posture, wearing a lotus crown, on a mustard background">
+                            <figcaption>Raja Mandhata in a yogic posture. Pahari painting, Nurpur, c. 1690. Cleveland Museum of Art.</figcaption>
+                        </figure>
+
+                        <div class="heritage-copy">
+                            <p class="eyebrow">Why tradition matters here</p>
+                            <p class="heritage-sanskrit" lang="sa">योगश्चित्तवृत्तिनिरोधः</p>
+                            <h2 id="heritage-title"><em>Yoga is the stilling of the mind.</em></h2>
+                            <p class="label">Patanjali, Yoga Sutras 1.2</p>
+                            <p>Patanjali set down the Yoga Sutras in India more than 1,500 years ago. Dr. Seema was part of the founding medical team at Patanjali Yogpeeth, the institute named after him, and teaches in that classical tradition: posture, breath and stillness, adapted to your body with a doctor's care.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- CLASSES -->
@@ -533,7 +537,7 @@
 
                 <div class="footer-base">
                     <p>© 2026 Better Wellness</p>
-                    <p>Some images from Unsplash</p>
+                    <p>Paintings: Nicholas Roerich, <i>Himalayas, Sikkim</i>; Pahari school, Nurpur (public domain) · Some images from Unsplash</p>
                 </div>
             </div>
         </footer>
