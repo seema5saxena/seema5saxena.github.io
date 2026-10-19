@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
         <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta name="google-site-verification" content="fwdaEXdY_R1vgWOWKHq35KhdiGbAEZY68K1AI_NjMUM" />
 
@@ -143,6 +143,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="preload" as="image" href="images/site/seema-hero.jpg">
+        <script src="js/site.js"></script>
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/site.css" rel="stylesheet">
     </head>
@@ -190,20 +191,20 @@
                             <a class="text-link" href="#timings">See class timings <i class="bi-arrow-right" aria-hidden="true"></i></a>
                         </div>
 
-                        <dl class="credentials">
-                            <div>
-                                <dt>25 years</dt>
-                                <dd>of yoga and Ayurveda practice</dd>
-                            </div>
-                            <div>
-                                <dt>Patanjali Yogpeeth</dt>
-                                <dd>founding medical team</dd>
-                            </div>
-                            <div>
-                                <dt>MDNIY graduate</dt>
-                                <dd>National Institute of Yoga, New Delhi</dd>
-                            </div>
-                        </dl>
+                        <ul class="trust" aria-label="Credentials">
+                            <li>
+                                <span class="trust-icon"><i class="bi-hourglass-split" aria-hidden="true"></i></span>
+                                <span><strong>25 years</strong>of yoga &amp; Ayurveda</span>
+                            </li>
+                            <li>
+                                <span class="trust-icon"><i class="bi-award" aria-hidden="true"></i></span>
+                                <span><strong>Patanjali Yogpeeth</strong>founding medical team</span>
+                            </li>
+                            <li>
+                                <span class="trust-icon"><i class="bi-patch-check" aria-hidden="true"></i></span>
+                                <span><strong>MDNIY graduate</strong>National Institute of Yoga</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <figure class="hero-photo">
@@ -226,95 +227,114 @@
 
             <!-- TEACHER -->
             <section class="section teacher" id="about" aria-labelledby="about-title">
-                <div class="container">
-                    <div class="teacher-grid">
+                <div class="container teacher-grid">
 
-                        <div class="teacher-intro">
-                            <p class="eyebrow">Your teacher</p>
-                            <h2 id="about-title">Dr. Seema Saxena</h2>
-                            <p class="teacher-role">Ayurvedic doctor &amp; yoga teacher</p>
-                            <p>Dr. Seema has 25 years of practice. She was part of the founding medical team at Patanjali Yogpeeth with Swami Ramdev, and trained at the Morarji Desai National Institute of Yoga in New Delhi.</p>
-                            <p>Because she is a doctor as well as a teacher, she starts from how your body is today: your joints, your breath, any condition you live with. Then she builds the practice around it.</p>
-                            <ul class="teacher-teaches" aria-label="What she teaches">
-                                <li>Therapeutic yoga</li>
-                                <li>Pranayama</li>
-                                <li>Meditation</li>
-                                <li>Ayurvedic lifestyle</li>
-                            </ul>
-                        </div>
-
-                        <figure class="tile tile-tall">
+                    <div class="teacher-collage" data-reveal>
+                        <figure class="collage-main">
                             <img src="images/site/seema-yoga-day-seattle.jpg" width="472" height="1024" loading="lazy" alt="Dr. Seema Saxena in tree pose beside an International Day of Yoga banner in Seattle">
-                            <figcaption>
-                                <strong>International Day of Yoga</strong>
-                                <span>Demonstrating tree pose in Seattle, USA</span>
-                            </figcaption>
+                            <figcaption>International Day of Yoga, Seattle</figcaption>
                         </figure>
-
-                        <figure class="tile">
+                        <figure class="collage-top">
                             <img src="images/site/seema-swami-ramdev.jpg" width="1200" height="800" loading="lazy" alt="A young Dr. Seema Saxena seated beside Swami Ramdev">
-                            <figcaption>
-                                <strong>Patanjali Yogpeeth</strong>
-                                <span>With Swami Ramdev, founding medical team</span>
-                            </figcaption>
+                            <figcaption>With Swami Ramdev</figcaption>
                         </figure>
-
-                        <figure class="tile">
+                        <figure class="collage-bottom">
                             <img src="images/site/seema-recognition.jpg" width="1200" height="800" loading="lazy" alt="Dr. Seema Saxena receiving a certificate at a ceremony">
-                            <figcaption>
-                                <strong>Recognition</strong>
-                                <span>With former External Affairs Minister Sushma Swaraj</span>
-                            </figcaption>
+                            <figcaption>With Sushma Swaraj</figcaption>
                         </figure>
-
+                        <div class="collage-seal" aria-hidden="true">
+                            <strong>25</strong>
+                            <span>years of practice</span>
+                        </div>
                     </div>
+
+                    <div class="teacher-copy" data-reveal>
+                        <p class="eyebrow">Your teacher</p>
+                        <h2 id="about-title">You're in good hands</h2>
+                        <p class="teacher-name"><strong>Dr. Seema Saxena</strong> · Ayurvedic doctor &amp; yoga teacher</p>
+                        <p class="teacher-lead">A doctor as well as a teacher, she starts from how your body is today, and builds the practice around it.</p>
+                        <p>Your joints, your breath, any condition you live with: Dr. Seema takes it all into account, and adapts every pose so you can practise safely.</p>
+
+                        <ol class="journey">
+                            <li>
+                                <strong>Patanjali Yogpeeth</strong>
+                                <span>Founding medical team with Swami Ramdev</span>
+                            </li>
+                            <li>
+                                <strong>Morarji Desai National Institute of Yoga</strong>
+                                <span>Trained in New Delhi</span>
+                            </li>
+                            <li>
+                                <strong>International Day of Yoga</strong>
+                                <span>Demonstrated practice in Seattle, USA</span>
+                            </li>
+                            <li>
+                                <strong>Today</strong>
+                                <span>Live online classes for students across India</span>
+                            </li>
+                        </ol>
+                    </div>
+
                 </div>
             </section>
 
             <!-- CLASSES -->
-            <section class="section" id="classes" aria-labelledby="classes-title">
-                <div class="container">
-                    <div class="section-head">
+            <section class="section classes" id="classes" aria-labelledby="classes-title">
+                <div class="container classes-grid">
+                    <div class="classes-head" data-reveal>
                         <p class="eyebrow">The classes</p>
                         <h2 id="classes-title">Real teaching, not a video to follow along to</h2>
+                        <p>Every class is live and guided by Dr. Seema herself, so the practice fits you, not the other way round.</p>
+                        <a class="text-link" href="#timings">See class timings <i class="bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
 
-                    <ul class="features">
-                        <li>
-                            <i class="bi-person-check" aria-hidden="true"></i>
-                            <h3>Personal attention</h3>
-                            <p>Dr. Seema watches as you practise and corrects your posture and breathing as you go.</p>
+                    <ul class="class-rows">
+                        <li data-reveal>
+                            <span class="row-icon"><i class="bi-person-check" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Personal attention</h3>
+                                <p>Dr. Seema watches as you practise and corrects your posture and breathing as you go.</p>
+                            </div>
+                            <span class="row-tag">Live on video</span>
                         </li>
-                        <li>
-                            <i class="bi-people" aria-hidden="true"></i>
-                            <h3>A small batch, or just you</h3>
-                            <p>Join a morning group, or book private one-on-one sessions.</p>
+                        <li data-reveal>
+                            <span class="row-icon"><i class="bi-people" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>A small batch, or just you</h3>
+                                <p>Join a morning group, or book private one-on-one sessions.</p>
+                            </div>
+                            <span class="row-tag">Group · 1-on-1</span>
                         </li>
-                        <li>
-                            <i class="bi-translate" aria-hidden="true"></i>
-                            <h3>Hindi or English</h3>
-                            <p>Taught in whichever language you're most comfortable in.</p>
+                        <li data-reveal>
+                            <span class="row-icon"><i class="bi-translate" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Hindi or English</h3>
+                                <p>Taught in whichever language you're most comfortable in.</p>
+                            </div>
+                            <span class="row-tag" lang="hi">हिन्दी · <span lang="en">English</span></span>
                         </li>
-                        <li>
-                            <i class="bi-sunrise" aria-hidden="true"></i>
-                            <h3>Every morning</h3>
-                            <p>Hour-long batches from 6:30 AM on weekdays and 7:30 AM at weekends, IST.</p>
+                        <li data-reveal>
+                            <span class="row-icon"><i class="bi-sunrise" aria-hidden="true"></i></span>
+                            <div>
+                                <h3>Every morning</h3>
+                                <p>Hour-long live batches, seven days a week.</p>
+                            </div>
+                            <span class="row-tag">6:30 – 10:30 AM</span>
                         </li>
                     </ul>
-
                 </div>
             </section>
 
             <!-- BENEFITS -->
             <section class="section benefits-section" aria-labelledby="benefits-title">
                 <div class="container">
-                    <div class="section-head section-head-center">
+                    <div class="section-head section-head-center" data-reveal>
                         <p class="eyebrow">Why people join</p>
                         <h2 id="benefits-title">How yoga can help you feel better</h2>
                     </div>
 
                     <div class="benefits">
-                        <ul class="benefits-col">
+                        <ul class="benefits-col" data-reveal>
                             <li>
                                 <h3>Ease back and neck pain</h3>
                                 <p>Gentle, guided movement for stiffness from desk work or age.</p>
@@ -329,12 +349,12 @@
                             </li>
                         </ul>
 
-                        <div class="benefits-figure">
+                        <div class="benefits-figure" data-reveal>
                             <img class="benefits-photo" src="images/site/namaste.jpg" width="1000" height="667" loading="lazy" alt="A woman seated cross-legged on a yoga mat, eyes closed, palms together">
                             <img class="benefits-lotus" src="images/site/lotus-mark.png" alt="" width="84" height="96">
                         </div>
 
-                        <ul class="benefits-col">
+                        <ul class="benefits-col" data-reveal>
                             <li>
                                 <h3>Sleep better</h3>
                                 <p>A steady morning routine and slower breathing help the body unwind.</p>
@@ -355,13 +375,13 @@
             <!-- TIMETABLE -->
             <section class="timetable" id="timings" aria-labelledby="timings-title">
                 <div class="container timetable-grid">
-                    <div class="timetable-copy">
+                    <div class="timetable-copy" data-reveal>
                         <p class="eyebrow">Class timings · IST</p>
                         <h2 id="timings-title">Find your morning batch</h2>
                         <p>Every batch is live and an hour long. Tap a time to book your free trial on WhatsApp, and we'll send the class link there.</p>
                     </div>
 
-                    <ul class="batches">
+                    <ul class="batches" data-reveal>
                         <li><a href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20a%20free%20trial%20in%20the%206%3A30%20AM%20batch." target="_blank" rel="noopener"><span class="batch-time">6:30 – 7:30 AM</span><span class="batch-days">Monday to Friday</span><span class="batch-book">Book <i class="bi-arrow-right" aria-hidden="true"></i></span></a></li>
                         <li><a href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20a%20free%20trial%20in%20the%207%3A30%20AM%20batch." target="_blank" rel="noopener"><span class="batch-time">7:30 – 8:30 AM</span><span class="batch-days">Every day</span><span class="batch-book">Book <i class="bi-arrow-right" aria-hidden="true"></i></span></a></li>
                         <li><a href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20a%20free%20trial%20in%20the%208%3A30%20AM%20batch." target="_blank" rel="noopener"><span class="batch-time">8:30 – 9:30 AM</span><span class="batch-days">Every day</span><span class="batch-book">Book <i class="bi-arrow-right" aria-hidden="true"></i></span></a></li>
@@ -375,13 +395,13 @@
             <!-- REVIEWS -->
             <section class="section section-sand" id="reviews" aria-labelledby="reviews-title">
                 <div class="container">
-                    <div class="section-head">
+                    <div class="section-head" data-reveal>
                         <p class="eyebrow">Students</p>
                         <h2 id="reviews-title">In their words</h2>
                     </div>
 
                     <div class="reviews">
-                        <figure class="review review-featured">
+                        <figure class="review review-featured" data-reveal>
                             <span class="review-topic">Inner peace</span>
                             <blockquote>“Yoga is my personal time to nurture my soul and find happiness. With the right guidance from Dr. Seema Ma’am, this journey has brought me immense peace. Practicing yoga with her has led to a spiritual awakening and given me moments of pause where I listen to my own breath, bringing a deep sense of peace from within.”</blockquote>
                             <figcaption>
@@ -389,7 +409,7 @@
                                 <span><strong>Anu Satija</strong> Doctor</span>
                             </figcaption>
                         </figure>
-                        <figure class="review">
+                        <figure class="review" data-reveal>
                             <span class="review-topic">Desk-job neck pain</span>
                             <blockquote>“Long hours at my desk left me with constant neck pain and work stress. Joining Dr. Seema's 7:00 AM online sessions has been life-changing. Her focus on pranayama and gentle stretching keeps me energized and pain-free throughout the workday.”</blockquote>
                             <figcaption>
@@ -397,7 +417,7 @@
                                 <span><strong>Priya Sharma</strong> Software engineer</span>
                             </figcaption>
                         </figure>
-                        <figure class="review">
+                        <figure class="review" data-reveal>
                             <span class="review-topic">Yoga for seniors</span>
                             <blockquote>“As a senior citizen with chronic back stiffness, I was hesitant about yoga. Dr. Seema's medical background as an Ayurvedic doctor made all the difference. She gave me personalized modifications that restored my flexibility without any pain. Highly recommended for all ages!”</blockquote>
                             <figcaption>
@@ -412,13 +432,13 @@
             <!-- FAQ -->
             <section class="section" id="faq" aria-labelledby="faq-title">
                 <div class="container faq-grid">
-                    <div class="section-head">
+                    <div class="section-head" data-reveal>
                         <p class="eyebrow">Questions</p>
                         <h2 id="faq-title">Good to know</h2>
                         <p class="muted">Anything else? <a href="https://wa.me/918178773682" target="_blank" rel="noopener">Ask us on WhatsApp</a>.</p>
                     </div>
 
-                    <div class="faq">
+                    <div class="faq" data-reveal>
                         <details>
                             <summary>How do the online classes work?</summary>
                             <p>Classes are live on video. Dr. Seema watches as you practise and corrects your posture and breathing in real time, so every asana is done safely.</p>
@@ -454,7 +474,7 @@
             <!-- CLOSING CTA -->
             <section class="cta" aria-labelledby="cta-title">
                 <div class="container">
-                    <div class="cta-card">
+                    <div class="cta-card" data-reveal>
                         <img class="cta-bg" src="images/site/plant-shadows.jpg" width="1800" height="1200" loading="lazy" alt="">
                         <div class="cta-inner">
                             <h2 id="cta-title">Your first class is on us</h2>
@@ -477,25 +497,13 @@
                             <img src="images/site/lotus-mark.png" alt="" width="28" height="32">
                             <span>Better Wellness</span>
                         </a>
-                        <p>Live online yoga and Ayurvedic guidance with Dr. Seema Saxena, wherever you are.</p>
-                        <a class="btn btn-small" href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20yoga%20class." target="_blank" rel="noopener">
-                            <i class="bi-whatsapp" aria-hidden="true"></i> Book a free trial
-                        </a>
+                        <p>Live online yoga and Ayurvedic guidance with Dr. Seema Saxena.</p>
                     </div>
-
-                    <nav class="footer-col" aria-label="Footer">
-                        <h2 class="footer-title">Explore</h2>
-                        <a href="#about">Dr. Seema</a>
-                        <a href="#classes">Classes</a>
-                        <a href="#timings">Timings</a>
-                        <a href="#reviews">Reviews</a>
-                        <a href="#faq">FAQ</a>
-                    </nav>
 
                     <div class="footer-col">
                         <h2 class="footer-title">Class timings</h2>
-                        <p>Mon – Fri<br><span>6:30 – 10:30 AM IST</span></p>
-                        <p>Sat &amp; Sun<br><span>7:30 – 10:30 AM IST</span></p>
+                        <p>Mon – Fri <span>6:30 – 10:30 AM IST</span></p>
+                        <p>Sat &amp; Sun <span>7:30 – 10:30 AM IST</span></p>
                     </div>
 
                     <div class="footer-col">
@@ -504,8 +512,6 @@
                         <a href="mailto:betterwellness25@gmail.com"><i class="bi-envelope" aria-hidden="true"></i> betterwellness25@gmail.com</a>
                     </div>
                 </div>
-
-                <p class="footer-word" aria-hidden="true">Better Wellness</p>
 
                 <div class="footer-base">
                     <p>© 2026 Better Wellness</p>

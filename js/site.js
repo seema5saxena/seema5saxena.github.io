@@ -1,0 +1,56 @@
+// Better Wellness: reveal-on-scroll and header state. Loaded in <head> so the
+// "motion" class is set before first paint; the page works fully without it.
+(function () {
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canAnimate = !reduceMotion && 'IntersectionObserver' in window;
+
+  if (canAnimate) {
+    root.classList.add('motion');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var header = document.querySelector('.site-header');
+    var updateHeader = function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    if (!canAnimate) {
+      return;
+    }
+
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    var observerRan = false;
+
+    // Stagger siblings that reveal together (feature rows, review cards)
+    items.forEach(function (el) {
+      var siblings = Array.prototype.filter.call(el.parentElement.children, function (child) {
+        return child.hasAttribute('data-reveal');
+      });
+      el.style.setProperty('--i', siblings.indexOf(el));
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      observerRan = true;
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    items.forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // Never leave content hidden if the observer fails to report
+    setTimeout(function () {
+      if (!observerRan) {
+        root.classList.remove('motion');
+      }
+    }, 3000);
+  });
+})();

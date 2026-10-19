@@ -176,12 +176,25 @@ figure {
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
   background: var(--brand-dark);
   color: var(--surface);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(35, 70, 57, 0.22);
+}
+
+.text-link i,
+.batch-book i {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.text-link:hover i,
+.batches a:hover .batch-book i {
+  transform: translateX(4px);
 }
 
 .btn i {
@@ -231,7 +244,13 @@ figure {
   background: rgba(251, 248, 243, 0.9);
   -webkit-backdrop-filter: saturate(160%) blur(12px);
   backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 24px rgba(29, 39, 34, 0.05);
 }
 
 .header-inner {
@@ -305,31 +324,50 @@ figure {
   gap: 16px 28px;
 }
 
-.credentials {
+.trust {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  justify-content: space-between;
-  gap: 24px;
-  margin: 56px 0 0;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(3, 1fr);
+  margin: 52px 0 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
 }
 
-.credentials dt {
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: 23px;
-  white-space: nowrap;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+.trust li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 22px;
 }
 
-.credentials dd {
-  max-width: 180px;
-  margin: 6px 0 0;
+.trust li + li {
+  border-left: 1px solid var(--line);
+}
+
+.trust-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sand);
+  color: var(--brand);
+  font-size: 17px;
+}
+
+.trust li > span:last-child {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.trust strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .hero-photo {
@@ -430,132 +468,280 @@ figure {
 
 /* ---------- Classes ---------- */
 
-.features {
+.classes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 88px;
+  align-items: start;
 }
 
-.features li {
-  padding-top: 24px;
+.classes-head {
+  position: sticky;
+  top: calc(var(--header-h) + 40px);
+}
+
+.classes-head h2 {
+  margin-bottom: 20px;
+}
+
+.classes-head p {
+  max-width: 400px;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.class-rows {
   border-top: 1px solid var(--line);
 }
 
-.features i {
+.class-rows li {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 26px 16px;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.3s ease;
+}
+
+.class-rows li:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.row-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--sand);
   color: var(--brand);
-  font-size: 24px;
+  font-size: 21px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.features h3 {
-  margin: 16px 0 8px;
+.class-rows li:hover .row-icon {
+  background: var(--brand);
+  color: var(--surface);
 }
 
-.features p {
+.class-rows h3 {
+  margin-bottom: 4px;
+}
+
+.class-rows p {
   margin: 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
-
-/* ---------- Teacher ---------- */
-
-.teacher {
-  padding-top: 24px;
-}
-
-.teacher-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.82fr;
-  grid-template-rows: auto auto;
-  gap: 20px;
-}
-
-.teacher-intro {
-  grid-column: 1 / span 2;
-  padding: 48px;
-  background: var(--sand);
-  border-radius: var(--radius-lg);
-}
-
-.teacher-intro h2 {
-  margin-bottom: 6px;
-}
-
-.teacher-role {
-  margin-bottom: 24px;
-  color: var(--brand);
-  font-family: var(--serif);
-  font-size: 22px;
-  font-style: italic;
-}
-
-.teacher-intro > p:not(.eyebrow):not(.teacher-role) {
-  max-width: 640px;
-}
-
-.teacher-teaches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 28px;
-}
-
-.teacher-teaches li {
-  padding: 7px 14px;
+.row-tag {
+  padding: 6px 12px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink-2);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-.tile {
+/* ---------- Teacher ---------- */
+
+.teacher {
+  padding-top: 40px;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: center;
+}
+
+.teacher-collage {
   position: relative;
+  aspect-ratio: 1 / 1.08;
+}
+
+.teacher-collage figure {
+  position: absolute;
+  margin: 0;
   overflow: hidden;
-  min-height: 300px;
-  border-radius: var(--radius-lg);
+  border-radius: 24px;
   background: var(--sand);
 }
 
-.tile img {
-  position: absolute;
-  inset: 0;
+.teacher-collage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.tile-tall {
-  grid-column: 3;
-  grid-row: 1 / span 2;
+.teacher-collage figure:hover img {
+  transform: scale(1.04);
 }
 
-.tile-tall img {
+.collage-main {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 84%;
+}
+
+.collage-main img {
   object-position: 50% 30%;
 }
 
-.tile figcaption {
-  position: absolute;
-  left: 0;
+.collage-top {
+  top: 6%;
   right: 0;
+  width: 54%;
+  aspect-ratio: 4 / 3;
+  border: 6px solid var(--bg);
+}
+
+.collage-bottom {
+  right: 6%;
   bottom: 0;
-  padding: 56px 20px 18px;
-  background: linear-gradient(0deg, rgba(20, 24, 21, 0.78) 0%, rgba(20, 24, 21, 0) 100%);
+  width: 58%;
+  aspect-ratio: 4 / 3;
+  border: 6px solid var(--bg);
+}
+
+.teacher-collage figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* The bottom photo overlaps the main one, so its label sits at the top */
+.collage-main figcaption {
+  top: 10px;
+  bottom: auto;
+}
+
+.collage-seal {
+  position: absolute;
+  left: calc(50% - 62px);
+  top: calc(52% - 62px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 124px;
+  height: 124px;
+  border: 6px solid var(--bg);
+  border-radius: 50%;
+  background: var(--brand);
   color: var(--surface);
-  line-height: 1.35;
+  text-align: center;
 }
 
-.tile figcaption strong {
-  display: block;
+.collage-seal strong {
   font-family: var(--serif);
-  font-size: 21px;
+  font-size: 42px;
   font-weight: 400;
+  line-height: 1;
 }
 
-.tile figcaption span {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
+.collage-seal span {
+  max-width: 76px;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.teacher-copy h2 {
+  margin-bottom: 12px;
+}
+
+.teacher-name {
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.teacher-name strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.teacher-lead {
+  margin-bottom: 16px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.teacher-copy > p:not(.eyebrow):not(.teacher-name):not(.teacher-lead) {
+  color: var(--muted);
+}
+
+.journey {
+  position: relative;
+  margin-top: 32px;
+  padding-left: 28px;
+}
+
+.journey::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--line);
+}
+
+.journey li {
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.journey li:last-child {
+  padding-bottom: 0;
+}
+
+.journey li::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.journey li:last-child::before {
+  background: var(--brand);
+}
+
+.journey strong {
+  display: block;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.journey span {
+  color: var(--muted);
+  font-size: 15px;
 }
 
 /* ---------- Benefits ---------- */
@@ -888,8 +1074,12 @@ figure {
   line-height: 1;
 }
 
+.faq summary::after {
+  transition: transform 0.3s ease;
+}
+
 .faq details[open] summary::after {
-  content: "\2212";
+  transform: rotate(45deg);
 }
 
 .faq details p {
@@ -951,21 +1141,22 @@ figure {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  overflow: hidden;
-  padding: 80px 0 32px;
+  padding: 48px 0 24px;
   background: var(--sand);
   font-size: 15px;
 }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 0.8fr 1fr 1.2fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 40px;
+  align-items: start;
+  padding-bottom: 32px;
 }
 
 .footer-brand p {
-  max-width: 320px;
-  margin: 14px 0 24px;
+  max-width: 300px;
+  margin: 10px 0 0;
   color: var(--muted);
 }
 
@@ -973,11 +1164,11 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-title {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 12px;
@@ -990,10 +1181,10 @@ figure {
   margin: 0;
   color: var(--ink);
   font-weight: 500;
-  line-height: 1.5;
 }
 
 .footer-col p span {
+  margin-left: 6px;
   color: var(--muted);
   font-weight: 400;
 }
@@ -1012,24 +1203,12 @@ figure {
   color: var(--brand);
 }
 
-.footer-word {
-  margin: 72px 0 0;
-  color: rgba(47, 93, 79, 0.08);
-  font-family: var(--serif);
-  font-size: clamp(56px, 11.4vw, 156px);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  text-align: center;
-  white-space: nowrap;
-  user-select: none;
-}
-
 .footer-base {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px 24px;
-  padding-top: 20px;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 12px;
@@ -1063,44 +1242,89 @@ figure {
   background: #1EBE5B;
 }
 
+/* ---------- Motion ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+
+  .motion [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-copy > *,
+  .hero-photo {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+  .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+  .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+  .hero-copy > :nth-child(5) { animation-delay: 0.32s; }
+  .hero-photo { animation-delay: 0.2s; }
+
+  .benefits-figure::after {
+    animation: spin 90s linear infinite;
+  }
+
+  .whatsapp-float {
+    animation: pop 0.5s 1.2s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+  }
+
+  .faq details[open] p {
+    animation: fade-down 0.35s ease;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1024px) {
-  .hero-grid {
+  .hero-grid,
+  .teacher-grid,
+  .classes-grid {
     gap: 48px;
-  }
-
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
   }
 
   .benefits {
     gap: 40px;
   }
 
-  .teacher-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .teacher-intro {
-    grid-column: 1 / span 2;
-  }
-
-  .tile-tall {
-    grid-column: 1;
-    grid-row: auto;
-    min-height: 420px;
-  }
-
   .faq-grid,
   .timetable-grid {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1113,12 +1337,23 @@ figure {
     padding: 32px 0 72px;
   }
 
-  .hero-grid {
+  .hero-grid,
+  .teacher-grid,
+  .classes-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-photo {
     max-width: 520px;
+  }
+
+  .teacher-collage {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .classes-head {
+    position: static;
   }
 
   .reviews {
@@ -1155,15 +1390,23 @@ figure {
   }
 
   .teacher {
-    padding-top: 0;
+    padding-top: 8px;
   }
 
   .section-head {
     margin-bottom: 40px;
   }
 
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
   .site-footer {
-    padding-bottom: 104px;
+    padding-bottom: 96px;
   }
 }
 
@@ -1188,20 +1431,20 @@ figure {
     width: 100%;
   }
 
-  .credentials {
+  .trust {
     grid-template-columns: 1fr;
+  }
+
+  .trust li {
+    flex-direction: row;
+    align-items: center;
     gap: 14px;
+    padding: 14px 16px;
   }
 
-  .credentials div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 10px;
-  }
-
-  .credentials dd {
-    margin: 0;
+  .trust li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
 
   .hero-photo {
@@ -1212,32 +1455,45 @@ figure {
     inset: 24px 24px 0 0;
   }
 
-  .credentials dd {
-    max-width: none;
+  .collage-seal {
+    left: calc(50% - 48px);
+    top: calc(52% - 48px);
+    width: 96px;
+    height: 96px;
+    border-width: 4px;
   }
 
-  .features {
-    grid-template-columns: 1fr;
+  .collage-seal strong {
+    font-size: 32px;
   }
 
-  .teacher-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .collage-seal span {
+    font-size: 8px;
   }
 
-  .teacher-intro {
-    grid-column: 1;
-    padding: 28px 22px;
+  .teacher-collage figcaption {
+    font-size: 11px;
   }
 
-  .tile,
-  .tile-tall {
-    grid-column: 1;
-    min-height: 260px;
+  .teacher-lead {
+    font-size: 22px;
   }
 
-  .tile-tall {
-    min-height: 440px;
+  .class-rows li {
+    grid-template-columns: 44px 1fr;
+    gap: 6px 16px;
+    padding: 20px 4px;
+  }
+
+  .row-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .row-tag {
+    grid-column: 2;
+    justify-self: start;
   }
 
   .batches a {
@@ -1276,6 +1532,6 @@ figure {
 
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 }
