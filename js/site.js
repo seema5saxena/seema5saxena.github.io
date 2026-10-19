@@ -17,6 +17,8 @@
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
 
+    showNextBatch();
+
     if (!canAnimate) {
       return;
     }
@@ -38,6 +40,10 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
+          var counter = entry.target.querySelector('[data-count]');
+          if (counter) {
+            countUp(counter);
+          }
         }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
@@ -53,4 +59,68 @@
       }
     }, 3000);
   });
+
+  // Counts a number up to its real value once, easing out
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var duration = 1400;
+    var start = null;
+    var step = function (time) {
+      if (start === null) {
+        start = time;
+      }
+      var progress = Math.min((time - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    el.textContent = '0';
+    window.requestAnimationFrame(step);
+  }
+
+  // Batch start times in IST, matching the timetable: weekdays from 6:30, weekends from 7:30
+  var WEEKDAY_BATCHES = [390, 450, 510, 570];
+  var WEEKEND_BATCHES = [450, 510, 570];
+
+  function batchesFor(day) {
+    return day === 0 || day === 6 ? WEEKEND_BATCHES : WEEKDAY_BATCHES;
+  }
+
+  function formatTime(minutes) {
+    var h = Math.floor(minutes / 60);
+    var m = minutes % 60;
+    return h + ':' + (m < 10 ? '0' : '') + m + ' AM';
+  }
+
+  // Fills the hero chip with the live or next batch, worked out in India time
+  function showNextBatch() {
+    var label = document.querySelector('[data-next-batch]');
+    if (!label) {
+      return;
+    }
+    var ist = new Date(Date.now() + 330 * 60000);
+    var day = ist.getUTCDay();
+    var now = ist.getUTCHours() * 60 + ist.getUTCMinutes();
+    var today = batchesFor(day);
+    var text = null;
+
+    for (var i = 0; i < today.length; i++) {
+      if (now >= today[i] && now < today[i] + 60) {
+        text = 'Live now · ' + formatTime(today[i]) + ' batch';
+        label.parentElement.classList.add('is-live');
+        break;
+      }
+      if (now < today[i]) {
+        text = 'Next live batch · today, ' + formatTime(today[i]) + ' IST';
+        break;
+      }
+    }
+    if (!text) {
+      var tomorrow = batchesFor((day + 1) % 7);
+      text = 'Next live batch · tomorrow, ' + formatTime(tomorrow[0]) + ' IST';
+    }
+    label.textContent = text;
+  }
 })();

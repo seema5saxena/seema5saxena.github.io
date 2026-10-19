@@ -396,27 +396,68 @@ figure {
   border-radius: var(--radius-lg);
 }
 
-.photo-tags {
+.live-chip {
   position: absolute;
   top: 16px;
   left: 16px;
-  right: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.photo-tags li {
-  padding: 6px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px 8px 12px;
+  background: rgba(255, 255, 255, 0.94);
   border-radius: 999px;
-  background: rgba(20, 24, 21, 0.26);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  color: var(--surface);
+  box-shadow: 0 6px 18px rgba(29, 39, 34, 0.1);
+  color: var(--ink);
   font-size: 13px;
   font-weight: 600;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.live-chip:hover {
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.breath {
+  position: relative;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.breath::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: var(--brand);
+  opacity: 0.18;
+}
+
+/* Hand-drawn stroke under the hero's italic phrase */
+.underlined {
+  position: relative;
+  white-space: nowrap;
+}
+
+.underlined svg {
+  position: absolute;
+  left: -1%;
+  bottom: -0.14em;
+  width: 102%;
+  height: 0.3em;
+  overflow: visible;
+}
+
+.underlined path {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.5;
 }
 
 .hero-badge {
@@ -825,12 +866,21 @@ figure {
 
 /* ---------- Timetable ---------- */
 
+.timetable-section {
+  padding: 104px 0;
+}
+
 .timetable {
   position: relative;
   overflow: hidden;
-  padding: 112px 0 0;
+  padding: 88px 64px 0;
+  border-radius: 32px;
   background: var(--brand-dark);
   color: var(--surface);
+}
+
+.timetable h2 em {
+  color: var(--sand-gold);
 }
 
 .timetable-grid {
@@ -898,10 +948,10 @@ figure {
 }
 
 .timetable-word {
-  margin: 56px 0 0;
+  margin: 48px 0 0;
   color: transparent;
   font-family: var(--sans);
-  font-size: clamp(120px, 25vw, 360px);
+  font-size: clamp(96px, 22vw, 300px);
   font-weight: 800;
   line-height: 0.74;
   letter-spacing: -0.04em;
@@ -1279,6 +1329,55 @@ figure {
   .faq details[open] p {
     animation: fade-down 0.35s ease;
   }
+
+  .underlined path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    opacity: 0;
+    animation: draw 1.3s 0.7s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+  }
+
+  /* One slow breath: 4s in, 4s out */
+  .breath::after {
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  .cta-bg {
+    transition: transform 14s cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+
+  .motion .cta-card.is-visible .cta-bg {
+    transform: scale(1.07);
+  }
+}
+
+/* Hidden until it starts, so the round cap doesn't show as a dot */
+@keyframes draw {
+  0% {
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 0.5;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.5);
+    opacity: 0.32;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.1;
+  }
 }
 
 @keyframes rise {
@@ -1380,13 +1479,17 @@ figure {
     gap: 28px;
   }
 
-  .section,
-  .timetable {
+  .section {
     padding-top: 80px;
+    padding-bottom: 80px;
   }
 
-  .section {
-    padding-bottom: 80px;
+  .timetable-section {
+    padding: 0 0 80px;
+  }
+
+  .timetable {
+    padding: 56px 32px 0;
   }
 
   .teacher {
@@ -1527,6 +1630,11 @@ figure {
 
   .cta-card {
     padding: 72px 20px;
+    border-radius: 24px;
+  }
+
+  .timetable {
+    padding: 44px 18px 0;
     border-radius: 24px;
   }
 
