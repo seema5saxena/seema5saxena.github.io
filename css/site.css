@@ -1385,6 +1385,45 @@ figure {
   margin: 0;
 }
 
+/* ---------- Legal pages ---------- */
+
+.legal {
+  max-width: 760px;
+  padding-top: 72px;
+  padding-bottom: var(--section-y);
+}
+
+.legal h1 {
+  margin-bottom: 20px;
+  font-size: var(--fs-h2);
+}
+
+.legal-lead {
+  margin-bottom: 40px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--fs-serif-sm);
+  line-height: 1.5;
+}
+
+.legal h2 {
+  margin: 40px 0 10px;
+  font-family: var(--sans);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.legal p {
+  color: var(--ink-2);
+}
+
+.footer-base a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(102, 113, 107, 0.4);
+}
+
 /* ---------- Floating WhatsApp ---------- */
 
 .whatsapp-float {
