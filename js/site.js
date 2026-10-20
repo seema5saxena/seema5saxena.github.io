@@ -21,8 +21,8 @@
       return;
     }
 
-    // Ridges in the hero drift slightly with scroll, only while the hero is on screen
-    var heroCard = document.querySelector('.hero-card');
+    // The hero painting drifts slightly with scroll, only while the hero is on screen
+    var heroCard = document.querySelector('.hero');
     if (heroCard) {
       var ticking = false;
       var updateRidges = function () {
@@ -38,6 +38,18 @@
           window.requestAnimationFrame(updateRidges);
         }
       }, { passive: true });
+
+      // On devices with a mouse, the painting shifts a touch as the pointer moves
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        heroCard.addEventListener('pointermove', function (event) {
+          var box = heroCard.getBoundingClientRect();
+          var x = (event.clientX - box.left) / box.width - 0.5;
+          heroCard.style.setProperty('--hero-px', (x * 2).toFixed(3));
+        });
+        heroCard.addEventListener('pointerleave', function () {
+          heroCard.style.setProperty('--hero-px', '0');
+        });
+      }
     }
 
     var items = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));

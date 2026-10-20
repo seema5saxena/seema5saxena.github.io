@@ -140,6 +140,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Mukta:wght@500;600&display=swap" rel="stylesheet">
                 <script src="js/site.js"></script>
         <script src="js/ads.js" defer></script>
+        <link rel="preload" as="image" href="images/site/hero-drops-of-life.jpg">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/site.css" rel="stylesheet">
     </head>
@@ -173,33 +174,28 @@
 
             <!-- HERO -->
             <section class="hero" id="top">
-                <div class="container">
-                    <div class="hero-card">
-                        <div class="hero-copy">
-                            <p class="eyebrow">Live online yoga · Delhi NCR &amp; India</p>
-                            <h1>Feel calmer, stronger and lighter with live yoga, <em class="underlined">from home<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C 60 7, 170 3, 298 6 C 296 8, 292 9, 286 9.5 C 180 10, 90 13.5, 6 18 C 2 18, 0 15.5, 2 14 Z"/></svg></em></h1>
-                            <p class="lede">Small morning batches with Dr. Seema Saxena, gentle and safe for every age. Your first class is free.</p>
-                            <a class="hero-cta" href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20yoga%20class." target="_blank" rel="noopener">
-                                <i class="bi-whatsapp" aria-hidden="true"></i>
-                                <span>Book your free trial class</span>
-                                <span class="hero-cta-arrow" aria-hidden="true"><i class="bi-arrow-right"></i></span>
-                            </a>
-                            <ul class="hero-proof" aria-label="About Dr. Seema">
-                                <li>Ayurvedic doctor</li>
-                                <li>25 years of practice</li>
-                                <li>Patanjali Yogpeeth medical team</li>
-                                <li>MDNIY graduate</li>
-                            </ul>
-                        </div>
+                <img class="hero-art" src="images/site/hero-drops-of-life.jpg" width="1800" height="1131" alt="" fetchpriority="high">
 
-                        <div class="horizon" aria-hidden="true">
-                            <div class="sun"></div>
-                            <svg class="ridge ridge-far" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M0 250 L70 228 L120 240 L190 196 L240 210 L300 150 L345 172 L395 138 L455 92 L500 128 L548 112 L600 160 L660 140 L725 178 L790 150 L850 182 L915 128 L975 168 L1040 146 L1110 190 L1175 156 L1245 204 L1315 180 L1380 205 L1440 196 L1440 400 L0 400 Z"/></svg>
-                            <svg class="ridge ridge-mid" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M0 292 C110 268 210 252 320 272 C430 292 520 238 640 246 C760 254 850 296 980 284 C1100 272 1200 238 1300 256 C1370 268 1410 284 1440 282 L1440 400 L0 400 Z"/></svg>
-                            <svg class="ridge ridge-near" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M0 338 C160 314 300 322 450 338 C620 356 760 314 920 322 C1080 330 1240 362 1440 334 L1440 400 L0 400 Z"/></svg>
-                            <svg class="ridge ridge-front" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M0 372 C200 356 420 368 640 376 C860 384 1100 358 1440 368 L1440 400 L0 400 Z"/></svg>
-                        </div>
+                <div class="container hero-inner">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Live online yoga</p>
+                        <h1>Feel calmer, stronger, <em class="underlined">lighter.<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M3 17 C 60 10.5, 170 7, 297 9.5 C 295.5 11, 292 11.8, 287 12 C 182 11.4, 84 14.2, 8 19 C 4.5 19.3, 2 18.4, 3 17 Z"/></svg></em></h1>
+                        <p class="lede">Small morning batches with an Ayurvedic doctor, from the comfort of home.</p>
+                        <a class="hero-cta" href="https://wa.me/918178773682?text=Hi%20Dr.%20Seema%2C%20I%27d%20like%20to%20book%20a%20free%20trial%20yoga%20class." target="_blank" rel="noopener">
+                            <i class="bi-whatsapp" aria-hidden="true"></i>
+                            <span>Book a free trial class</span>
+                            <span class="hero-cta-arrow" aria-hidden="true"><i class="bi-arrow-right"></i></span>
+                        </a>
                     </div>
+                </div>
+
+                <div class="container hero-labels">
+                    <ul aria-label="About Dr. Seema">
+                        <li>Dr. Seema Saxena</li>
+                        <li>Ayurvedic doctor</li>
+                        <li>25 years of practice</li>
+                        <li>Patanjali Yogpeeth</li>
+                    </ul>
                 </div>
             </section>
 
@@ -519,7 +515,7 @@
 
                 <div class="footer-base">
                     <p>© 2026 Better Wellness · <a href="privacy.html">Privacy policy</a></p>
-                    <p>Painting: Pahari school, Nurpur (public domain) · Some images from Unsplash</p>
+                    <p>Paintings: Nicholas Roerich, <i>Drops of Life</i> (recoloured); Pahari school, Nurpur (public domain) · Some images from Unsplash</p>
                 </div>
             </div>
         </footer>
