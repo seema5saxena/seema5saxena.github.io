@@ -367,27 +367,35 @@ figure {
   padding: calc(var(--header-h) + 88px) 0 44px;
 }
 
+/* The mountains own the right side, from just below the header, and melt into the page */
 .hero-art {
   position: absolute;
-  inset: 0;
+  top: calc(var(--header-h) + 8px);
+  right: 0;
+  bottom: 0;
   z-index: -2;
-  width: 100%;
-  height: 100%;
+  width: 66%;
+  height: calc(100% - var(--header-h) - 8px);
   object-fit: cover;
-  object-position: 60% 30%;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  object-position: 58% 0%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%), linear-gradient(180deg, transparent 0%, #000 10%, #000 62%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 30%), linear-gradient(180deg, transparent 0%, #000 10%, #000 62%, transparent 100%);
+  mask-composite: intersect;
 }
 
 /* A paper wash on the left keeps the words calm and readable */
+/* A faint glow of morning light behind the peaks */
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(251, 248, 243, 0.94) 0%, rgba(251, 248, 243, 0.78) 34%, rgba(251, 248, 243, 0.2) 58%, rgba(251, 248, 243, 0) 72%),
-    linear-gradient(180deg, rgba(251, 248, 243, 0.7) 0%, rgba(251, 248, 243, 0) 22%);
+  top: 6%;
+  right: 8%;
+  z-index: -3;
+  width: 48%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 196, 120, 0.22) 0%, rgba(242, 196, 120, 0) 66%);
 }
 
 .hero-copy {
@@ -1451,9 +1459,9 @@ figure {
 
   .hero-copy > :nth-child(5) { animation-delay: 0.4s; }
 
-  /* The painting settles slowly as the page opens */
+  /* Sunrise on the peaks: cool pre-dawn tones warm into morning light, once */
   .hero-art {
-    animation: settle 2.6s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+    animation: dawn 3.2s 0.2s cubic-bezier(0.3, 0, 0.2, 1) both;
   }
 
   .benefits-figure::after {
@@ -1515,10 +1523,15 @@ figure {
   50% { transform: scaleY(1.06); }
 }
 
-@keyframes settle {
+@keyframes dawn {
   from {
-    opacity: 0.6;
-    transform: scale(1.06);
+    opacity: 0.55;
+    filter: saturate(0.25) brightness(0.9) hue-rotate(-12deg);
+    transform: scale(1.03);
+  }
+
+  45% {
+    opacity: 1;
   }
 }
 
@@ -1585,11 +1598,15 @@ figure {
   /* On phones the painting sits below the words, fading in and out */
   .hero-art {
     top: auto;
+    left: 0;
     bottom: 16px;
-    height: 260px;
-    object-position: 62% 35%;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+    width: 100%;
+    height: 270px;
+    object-position: 60% 0%;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 72%, transparent 100%);
+    -webkit-mask-composite: source-over;
+    mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 72%, transparent 100%);
+    mask-composite: add;
   }
 
   .hero::before {
